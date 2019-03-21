@@ -6,7 +6,7 @@ let macyOddjob = L.map('macyMapp').setView([30.4474, -90.0362], 5)
 	maxZoom: 16,
 	ext: 'jpg'
 }).addTo(macyOddjob)
-let mysteryHaus = L.marker([30.4474, -90.0362]).addto(macyOddjob)
+let mysteryHaus = L.marker([30.4474, -90.0362]).addTo(macyOddjob)
 let museumPoly = L.polygon([
   [30.479094, -90.039538],
   [30.478792, -90.039021],
