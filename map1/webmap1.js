@@ -1,4 +1,4 @@
-let macyOddjob = L.map('macyMapp').setView([30.477734, -90.046302], 12)
+let macyOddjob = L.map('macyMapp').setView([30.477734, -90.046302], 14)
 L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	subdomains: 'abcd',
