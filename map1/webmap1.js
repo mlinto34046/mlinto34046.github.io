@@ -10,7 +10,7 @@ let museumPoly = L.polygon([
   [30.479276, -90.039158]
 ]).addTo(macyOddjob)
 let hotelTo = L.polyline([
-	[30.4778, -90.0379]
+	[30.4778, -90.0379],
 	[30.4821, -90.0550], 
 	{color: 'red'}
 ]).addTo(macyOddjob);
