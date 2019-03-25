@@ -11,8 +11,7 @@ let museumPoly = L.polygon([
 ]).addTo(macyOddjob)
 let hotelTo = L.polyline([
 	[30.4778, -90.0379],
-	[30.4821, -90.0550], 
-	{color: 'red'}
+	[30.4821, -90.0550]
 ]).addTo(macyOddjob);
 mysteryHaus.bindPopup('Abita Mystery House')
 museumPoly.bindPopup('Abita Trailhead Museum')
