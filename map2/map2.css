@@ -1,16 +1,16 @@
 
-#macyMapp {
+#macyMapp2 {
   height: 600px;
   width: 800px
  }
 
-#macyMapp {
+#macyMapp2 {
   outline-style: solid;
   outline-width: 5px;
   outline-color: yellow
 }
 
- #macyMapp {
+ #macyMapp2 {
   margin: auto;
   width: 50%;
 }
