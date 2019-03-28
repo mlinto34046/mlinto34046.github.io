@@ -8,7 +8,7 @@ L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_met
   format: 'image/png',
   transparent: true,
   attribution: 'NWS/NOAA'
-L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_windspeed_offsets/MapServer/WMSServer', {
+L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_ocean_sfc_sst_time/MapServer/WMSServer', {
    layers: '1',
    format: 'image/png',
    transparent: true,
