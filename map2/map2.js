@@ -9,6 +9,12 @@ L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_met
   transparent: true,
   attribution: 'NWS/NOAA'
 }).addTo(macyOddjob)
+L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/sat_meteo_emulated_imagery_lightningstrikedensity_goes_time/MapServer/WMSServer', {
+   layers: '1',
+   format: 'image/png',
+   transparent: true,
+   attribution: 'NWS/NOAA'
+ }).addTo(macyOddjob)
 L.esri.dynamicMapLayer({
-  url: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/sat_meteo_emulated_imagery_lightningstrikedensity_goes_time/MapServer'
+  url: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/guidance_model_greatlakes_lmofs_time/MapServer'
 }).addTo(macyOddjob)
