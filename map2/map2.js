@@ -16,5 +16,5 @@ L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/sat_meteo_em
    attribution: 'NWS/NOAA'
  }).addTo(macyOddjob)
 L.esri.dynamicMapLayer({
-  url: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/radar_meteo_imagery_nexrad_time/MapServer'
+  url: 'https://nowcoast.noaa.gov/arcgis/services/nowcoast/guidance_model_greatlakes_lmofs_time/MapServer'
 }).addTo(macyOddjob)
