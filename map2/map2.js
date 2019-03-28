@@ -3,7 +3,7 @@ L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(macyOddjob)
-L.tileLayer.wms('https://geo.weather.gc.ca/geomet-beta', {
+L.tileLayer.wms('http://www.cpc.ncep.noaa.gov/products/predictions/threats/threats.php', {
   layers: 'geomet-beta',
   format: 'image/png',
   transparent: true,
