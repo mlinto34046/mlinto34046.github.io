@@ -4,7 +4,7 @@ L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(macyOddjob)
 L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_qpe_time/MapServer/WMSServer', {
-  layers: 'geomet-beta',
+  layers: '1',
   format: 'image/png',
   transparent: true,
   attribution: 'Government of Canada, Environment and Climate Change Canada, Meteorological Service of Canada'
