@@ -8,6 +8,7 @@ L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_met
   format: 'image/png',
   transparent: true,
   attribution: 'NWS/NOAA'
+}).addTo(macyOddjob)
 L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_ocean_sfc_sst_time/MapServer/WMSServer', {
    layers: '1',
    format: 'image/png',
