@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-
-let macyOddjob = L.map('macyMapp2').setView([30.464806, -90.040734], 12)
-let macyOddjob = L.map('macyMapp2').setView([30.464806, -90.040734], 4)
-=======
 let macyOddjob = L.map('macyMapp2').setView([39.8283, -98.5795], 4)
->>>>>>> 1c916b6745b2460893b679b59215e0f6f48edceb
 L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
