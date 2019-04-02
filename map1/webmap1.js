@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> f5ca1252ab0f83c2d8d72768d17ba32423fb92a1
 let macyOddjob = L.map('macyMapp').setView([30.464806, -90.040734], 12)
 L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,

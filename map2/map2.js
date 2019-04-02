@@ -1,15 +1,28 @@
+<<<<<<< HEAD
 
 let macyOddjob = L.map('macyMapp2').setView([30.464806, -90.040734], 12)
 let macyOddjob = L.map('macyMapp2').setView([30.464806, -90.040734], 4)
+=======
+let macyOddjob = L.map('macyMapp2').setView([39.8283, -98.5795], 4)
+>>>>>>> 1c916b6745b2460893b679b59215e0f6f48edceb
 L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(macyOddjob)
-L.tileLayer.wms('http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi', {
-  layers: 'nexrad-n0r-900913',
+L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_qpe_time/MapServer/WMSServer', {
+  layers: '1',
   format: 'image/png',
   transparent: true,
-  attribution: 'NOAA, Iowa State University'
+  attribution: 'NWS/NOAA'
+}).addTo(macyOddjob)
+L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/sat_meteo_emulated_imagery_lightningstrikedensity_goes_time/MapServer/WMSServer', {
+   layers: '1',
+   format: 'image/png',
+   transparent: true,
+   attribution: 'NWS/NOAA'
+ }).addTo(macyOddjob)
+L.esri.dynamicMapLayer({
+  url: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/guidance_model_greatlakes_lmofs_time/MapServer'
 }).addTo(macyOddjob)
 L.tileLayer.wms('https://mesonet.agron.iastate.edu/cgi-bin/wms/us/wwa.cgi', {
   layers: 'warnins_c',
