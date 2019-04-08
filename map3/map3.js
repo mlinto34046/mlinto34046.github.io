@@ -9,6 +9,7 @@ jQuery.getJSON(stateDemographicsUrl, function (data) {
       style: stateStyle,
       onEachFeature: onEachFeature
     }).addTo(macyOddjob)
+ })
 let stateStyle = function (feature) {
   let age = feature.properties.MED_AGE // get the current state's Median Age attribute
   let stateColor = 'olive' // let the initial color be a darker green
