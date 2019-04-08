@@ -7,7 +7,6 @@ let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_d
 jQuery.getJSON(stateDemographicsUrl, function (data) {
   L.geoJSON(data).addTo(macyOddjob)
 })
-L.geoJSON(data, stateGeojsonOptions).addTo(macyOddjob)
 let stateStyle = function (feature) {
   let age = feature.properties.MED_AGE // get the current state's Median Age attribute
   let stateColor = 'olive' // let the initial color be a darker green
