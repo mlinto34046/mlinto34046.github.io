@@ -4,10 +4,11 @@ L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(macyOddjob)
 let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_demographics_ESRI_2010A.geojson'
-
 jQuery.getJSON(stateDemographicsUrl, function (data) {
-  L.geoJSON(data).addTo(macyOddjob)
-})
+    L.geoJSON(data, {
+      style: stateStyle,
+      onEachFeature: onEachFeature
+    }).addTo(macyOddjob)
 let stateStyle = function (feature) {
   let age = feature.properties.MED_AGE // get the current state's Median Age attribute
   let stateColor = 'olive' // let the initial color be a darker green
