@@ -1,4 +1,4 @@
-let macyOddjob = L.map('macyMapp3').setView([30.464806, -90.040734], 4)
+let macyOddjob = L.map('macyMapp3').setView([38.959897, -100.371851], 4)
 L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
