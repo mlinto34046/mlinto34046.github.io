@@ -11,7 +11,7 @@ jQuery.getJSON(stateDemographicsUrl, function (data) {
     }).addTo(macyOddjob)
  })
 let stateStyle = function (feature) {
-  let age = feature.properties.POP2010 // get the current state's Median Age attribute
+  let pop = feature.properties.POP2010 // get the current state's Median Age attribute
   let stateStroke = '#3ed691' // let the initial color be a darker green
   let stateFill = '#68edae'
   if ( POP2010 < 4436369 ) { stateFill = '#e0fff0' } // if the state's median age is less than the average, color it a lighter green
@@ -24,8 +24,8 @@ let stateStyle = function (feature) {
 }
  let onEachFeature = function (feature, layer) {
      let name = feature.properties.STATE_NAME
-     let age = feature.properties.MED_AGE
-     layer.bindPopup('Median age of ' + name + ': ' + age + '<br>National average: 38')
+     let pop = feature.properties.POP2010
+     layer.bindPopup('The population in 2010 of ' + name + ': ' + pop + '<br>National average: 4436369')
    }
 let stateGeojsonOptions = { 
  	style: stateStyle,
