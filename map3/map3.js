@@ -25,7 +25,7 @@ let stateStyle = function (feature) {
  let onEachFeature = function (feature, layer) {
      let name = feature.properties.STATE_NAME
      let pop = feature.properties.POP2010
-     layer.bindPopup('The population in 2010 of ' + name + ': ' + pop + '<br>National average: 4436369')
+     layer.bindPopup('The population of ' + name + ' in 2010: ' + pop + '<br>National average: 4436369')
    }
 let stateGeojsonOptions = { 
  	style: stateStyle,
