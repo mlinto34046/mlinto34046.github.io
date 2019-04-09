@@ -17,7 +17,7 @@ let stateStyle = function (feature) {
   if ( age < 38 ) { stateFill = '#e0fff0' } // if the state's median age is less than the average, color it a lighter green
   return {
     color: stateStroke,
-    fillColor: stateFill //use the color variable above for the value
+    fillColor: stateFill, //use the color variable above for the value
     weight: 1,
     fillOpacity: 0.2,
   }
