@@ -12,10 +12,12 @@ jQuery.getJSON(stateDemographicsUrl, function (data) {
  })
 let stateStyle = function (feature) {
   let age = feature.properties.MED_AGE // get the current state's Median Age attribute
-  let stateColor = 'olive' // let the initial color be a darker green
-  if ( age < 38 ) { stateColor = 'green' } // if the state's median age is less than the average, color it a lighter green
+  let stateStroke = '#3ed691' // let the initial color be a darker green
+  let stateFill = '#adffd9'
+  if ( age < 38 ) { stateFill = '#e0fff0' } // if the state's median age is less than the average, color it a lighter green
   return {
-    color: stateColor, //use the color variable above for the value
+    color: stateStroke,
+    fillColor: stateFill //use the color variable above for the value
     weight: 1,
     fillOpacity: 0.2,
     stroke-dasharray="4"
