@@ -20,7 +20,6 @@ let stateStyle = function (feature) {
     fillColor: stateFill //use the color variable above for the value
     weight: 1,
     fillOpacity: 0.2,
-    stroke-dasharray="4"
   }
 }
  let onEachFeature = function (feature, layer) {
