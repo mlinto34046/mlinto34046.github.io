@@ -11,10 +11,10 @@ jQuery.getJSON(stateDemographicsUrl, function (data) {
     }).addTo(macyOddjob)
  })
 let stateStyle = function (feature) {
-  let age = feature.properties.MED_AGE // get the current state's Median Age attribute
+  let age = feature.properties.POP2010 // get the current state's Median Age attribute
   let stateStroke = '#3ed691' // let the initial color be a darker green
   let stateFill = '#68edae'
-  if ( age < 38 ) { stateFill = '#e0fff0' } // if the state's median age is less than the average, color it a lighter green
+  if ( POP2010 < 4436369 ) { stateFill = '#e0fff0' } // if the state's median age is less than the average, color it a lighter green
   return {
     color: stateStroke,
     fillColor: stateFill, //use the color variable above for the value
