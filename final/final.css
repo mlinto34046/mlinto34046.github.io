@@ -1,9 +1,8 @@
 html, body, #map {
-  height: 500px;
-  width: 750px;
-  padding: 0;
-  margin: 0;
-  transform: translate(-50%, -50%)
+  height: 25%;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
 body {
   padding-top: 3.5rem;
