@@ -36,7 +36,7 @@ let tempAstyle = function (feature) {
 let aGeojsonOptions = { 
  	style: tempAStyle,
  	onEachFeature: onEachFeatureA
-   }
+   };
 
 jQuery.getJSON(temp2040, function (data) {
     L.geoJSON(data, {
@@ -68,7 +68,7 @@ let tempBstyle = function (feature) {
 let bGeojsonOptions = { 
  	style: tempBStyle,
  	onEachFeature: onEachFeatureB
-   }
+   };
 
 jQuery.getJSON(temp2080, function (data) {
     L.geoJSON(data, {
@@ -100,5 +100,16 @@ let tempCstyle = function (feature) {
 let cGeojsonOptions = { 
  	style: tempCStyle,
  	onEachFeature: onEachFeatureC
-   }
+   };
 
+var baseMap = {
+    "Grayscale": basemap,
+};
+
+var overlayMaps = {
+    "Average Temperatures from 1993 to 2011": temp9311,
+    "Projected Temperatures in 2040": temp2040,
+    "Projeted Temperatures in 2080": temp2080
+};
+
+L.control.layers(baseMap, overlayMaps).addTo(map);
