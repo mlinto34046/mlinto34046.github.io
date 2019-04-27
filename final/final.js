@@ -26,7 +26,7 @@ jQuery.getJSON(temp9311, function (data) {
 		else {tempStroke = '#A8000'} // possibly wrong syntax
   return {
     color: tempStroke,
-    weight: 1,
+    weight: 2,
     fillOpacity: 0.2,
   }
  }
@@ -62,7 +62,7 @@ let tempBStyle = function (feature) {
 		else {tempStroke = '#A8000'} // possibly wrong syntax
   return {
     color: tempStroke,
-    weight: 1,
+    weight: 2,
     fillOpacity: 0.2,
   }
 }
@@ -96,7 +96,7 @@ let tempCStyle = function (feature) {
 		else {tempStroke = '#A8000'} // possibly wrong syntax
   return {
     color: tempStroke,
-    weight: 1,
+    weight: 2,
     fillOpacity: 0.2,
   }
 }
