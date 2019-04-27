@@ -40,12 +40,12 @@ let aGeojsonOptions = {
 
 jQuery.getJSON(temp2040, function (data) {
     L.geoJSON(data, {
-      style: tempBstyle,
+      style: tempBStyle,
       onEachFeature: onEachFeatureB
     }).addTo(demoMap)
  })
 
-let tempBstyle = function (feature) {
+let tempBStyle = function (feature) {
   let temp = feature.properties.S30_2040D // get the stream's temp attribute
   let tempStroke = '#A8000' // let the initial color be a darker red
   if ( temp < 12.5 ) { tempStroke = '#00FFC5' } // if the state's median age is less than the average, color it a lighter green
@@ -72,12 +72,12 @@ let bGeojsonOptions = {
 
 jQuery.getJSON(temp2080, function (data) {
     L.geoJSON(data, {
-      style: tempCstyle,
+      style: tempCStyle,
       onEachFeature: onEachFeatureC
     }).addTo(demoMap)
  })
 
-let tempCstyle = function (feature) {
+let tempCStyle = function (feature) {
   let temp = feature.properties.S32_2080D // get the stream's temp attribute
   let tempStroke = '#A8000' // let the initial color be a darker red
   if ( temp < 12.5 ) { tempStroke = '#00FFC5' } // if the state's median age is less than the average, color it a lighter green
