@@ -8,7 +8,7 @@ let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
-      style: tempAstyle,
+      style: tempAStyle,
       onEachFeature: onEachFeatureA
     }).addTo(demoMap)
  })
