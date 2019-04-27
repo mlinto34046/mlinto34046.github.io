@@ -12,18 +12,6 @@ jQuery.getJSON(temp9311, function (data) {
       onEachFeature: onEachFeatureA
     }).addTo(demoMap)
  })
-jQuery.getJSON(temp2040, function (data) {
-    L.geoJSON(data, {
-      style: tempBstyle,
-      onEachFeature: onEachFeatureB
-    }).addTo(demoMap)
- })
-jQuery.getJSON(temp2080, function (data) {
-    L.geoJSON(data, {
-      style: tempCstyle,
-      onEachFeature: onEachFeatureC
-    }).addTo(demoMap)
- })
 
 let tempAstyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
@@ -50,6 +38,13 @@ let aGeojsonOptions = {
  	onEachFeature: onEachFeatureA
    }
 
+jQuery.getJSON(temp2040, function (data) {
+    L.geoJSON(data, {
+      style: tempBstyle,
+      onEachFeature: onEachFeatureB
+    }).addTo(demoMap)
+ })
+
 let tempBstyle = function (feature) {
   let temp = feature.properties.S30_2040D // get the stream's temp attribute
   let tempStroke = '#A8000' // let the initial color be a darker red
@@ -74,6 +69,13 @@ let bGeojsonOptions = {
  	style: tempBStyle,
  	onEachFeature: onEachFeatureB
    }
+
+jQuery.getJSON(temp2080, function (data) {
+    L.geoJSON(data, {
+      style: tempCstyle,
+      onEachFeature: onEachFeatureC
+    }).addTo(demoMap)
+ })
 
 let tempCstyle = function (feature) {
   let temp = feature.properties.S32_2080D // get the stream's temp attribute
