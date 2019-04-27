@@ -112,4 +112,4 @@ var overlayMaps = {
     "Projeted Temperatures in 2080": temp2080
 };
 
-L.control.layers(baseMap, overlayMaps).addTo(map);
+L.control.layers(baseMap, overlayMaps).addTo(demoMap);
