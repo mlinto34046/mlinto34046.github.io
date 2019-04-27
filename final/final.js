@@ -102,11 +102,11 @@ let cGeojsonOptions = {
  	onEachFeature: onEachFeatureC
    };
 
-var baseMap = {
+let baseMap = {
     "Grayscale": basemap,
 };
 
-var overlayMaps = {
+let overlayMaps = {
     "Average Temperatures from 1993 to 2011": temp9311,
     "Projected Temperatures in 2040": temp2040,
     "Projeted Temperatures in 2080": temp2080
