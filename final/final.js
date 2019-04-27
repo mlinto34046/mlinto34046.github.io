@@ -6,11 +6,12 @@ let basemap = L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
 let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
 let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
-let layerA= jQuery.getJSON(temp9311, function (data) {
+let layerA = L.layerGroup().addto(demoMap);
+jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
-    }).addTo(demoMap)
+    }).addTo(layerA)
  })
 
   let tempAStyle = function (feature) {
@@ -38,11 +39,13 @@ let aGeojsonOptions = {
  	onEachFeature: onEachFeatureA
    };
 
-let layerB = jQuery.getJSON(temp2040, function (data) {
+let layerB = L.layerGroup().addto(demoMap);
+
+    jQuery.getJSON(temp2040, function (data) {
     L.geoJSON(data, {
       style: tempBStyle,
       onEachFeature: onEachFeatureB
-    }).addTo(demoMap)
+    }).addTo(layerB)
  })
 
 let tempBStyle = function (feature) {
@@ -70,11 +73,13 @@ let bGeojsonOptions = {
  	onEachFeature: onEachFeatureB
    };
 
-let layerC = jQuery.getJSON(temp2080, function (data) {
+let layerC = L.layerGroup().addto(demoMap);
+
+jQuery.getJSON(temp2080, function (data) {
     L.geoJSON(data, {
       style: tempCStyle,
       onEachFeature: onEachFeatureC
-    }).addTo(demoMap)
+    }).addTo(layerC)
  })
 
 let tempCStyle = function (feature) {
