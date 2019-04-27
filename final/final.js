@@ -43,7 +43,7 @@ let aGeojsonOptions = {
  	onEachFeature: onEachFeatureA
    };
 		 
-layerA.addto(demoMap);
+layerA.addTo(demoMap);
 
 let layerB = L.layerGroup();
 
