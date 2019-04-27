@@ -1,4 +1,8 @@
-let demoMap = L.map('map').setView([47.493774, -121.823899], 9, [basemap, layerA)
+let demoMap = L.map('map' {
+		    center: [47.493774, -121.823899],
+		    zoom: 9,
+		    layers: [basemap, layerA)
+});
 let basemap = L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
