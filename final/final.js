@@ -1,7 +1,7 @@
 let demoMap = L.map('map', {
 		    center: [47.493774, -121.823899],
 		    zoom: 9,
-		    layers: [basemap, layerA)
+		    layers: [basemap, layerA]
 });
 let basemap = L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
