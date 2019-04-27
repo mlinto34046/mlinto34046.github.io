@@ -118,3 +118,4 @@ let overlayMaps = {
 };
 
 L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+layerA.addto(demoMap);
