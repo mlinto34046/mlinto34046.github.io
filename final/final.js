@@ -112,7 +112,7 @@ let baseMap = {
 };
 
 let overlayMaps = {
-    "Average Temperatures from 1993 to 2011": layerA,
+    "Average Temperatures from 1993 to 2011": layerA.addto(demoMap),
     "Projected Temperatures in 2040": layerB,
     "Projeted Temperatures in 2080": layerC
 };
