@@ -13,7 +13,7 @@ jQuery.getJSON(temp9311, function (data) {
     }).addTo(demoMap)
  })
 
-  let tempAstyle = function (feature) {
+  let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
   let tempStroke = '#A8000' // let the initial color be a darker red
   if ( temp < 12.5 ) { tempStroke = '#00FFC5' } // if the state's median age is less than the average, color it a lighter green
