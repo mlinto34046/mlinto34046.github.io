@@ -1,4 +1,4 @@
-let demoMap = L.map('map' {
+let demoMap = L.map('map', {
 		    center: [47.493774, -121.823899],
 		    zoom: 9,
 		    layers: [basemap, layerA)
