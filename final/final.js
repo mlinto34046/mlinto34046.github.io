@@ -5,7 +5,7 @@ let basemap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toposm-colo
 	minZoom: 0,
 	maxZoom: 20,
 	ext: 'jpg',
-	bounds: [[22, -132], [51, -56]
+	bounds: [[22, -132], [51, -56]]
 }).addTo(demoMap)
 let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
 let temp2040 = '/final/Stream_Temps_2040.geojson'
