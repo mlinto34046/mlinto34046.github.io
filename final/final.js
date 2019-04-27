@@ -1,4 +1,4 @@
-let demoMap = L.map('map').setView([47.493774, -121.823899], 10)
+let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
 let basemap = L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
