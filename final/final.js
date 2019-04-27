@@ -1,10 +1,11 @@
 let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
-let basemap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
+let basemap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toposm-color-relief/{z}/{x}/{y}.{ext}', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	subdomains: 'abcd',
 	minZoom: 0,
 	maxZoom: 20,
-	ext: 'png'
+	ext: 'jpg',
+	bounds: [[22, -132], [51, -56]
 }).addTo(demoMap)
 let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
 let temp2040 = '/final/Stream_Temps_2040.geojson'
@@ -41,6 +42,8 @@ let aGeojsonOptions = {
  	style: tempAStyle,
  	onEachFeature: onEachFeatureA
    };
+		 
+layerA.addto(demoMap);
 
 let layerB = L.layerGroup();
 
@@ -121,4 +124,4 @@ let overlayMaps = {
 };
 
 L.control.layers(baseMap, overlayMaps).addTo(demoMap);
-layerA.addto(demoMap);
+
