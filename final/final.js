@@ -3,9 +3,9 @@ L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(demoMap)
-let temp9311 = '/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
-let temp2040 = '/Stream_Temps_2040.geojson'
-let temp2080 = '/Projected_Stream_Temperatures_2080.geojson'
+let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
+let temp2040 = '/final/Stream_Temps_2040.geojson'
+let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 jQuery.getJSON(temp2040, function (data) {
     L.geoJSON(data, {
       style: tempBstyle,
