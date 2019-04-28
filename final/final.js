@@ -103,6 +103,9 @@ let tempCStyle = function (feature) {
  let onEachFeatureC = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S32_2080D
+     if (name = '') {
+	     return 'this unnamed stream'
+     }
      layer.bindPopup('The temperature of ' + name + ' in 2080: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let cGeojsonOptions = { 
