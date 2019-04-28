@@ -132,7 +132,7 @@ jQuery.getJSON(bounds, function (data) {
 
 let boundsFilter = function (feature) {
 	let county = feature.properties.JURISDIC_2
-	if county = 'King'
+	if (county = 'King')
 	return true
 }
   
