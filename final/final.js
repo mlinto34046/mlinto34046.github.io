@@ -135,7 +135,7 @@ let boundsFilter = function (feature) {
 let boundsStyle = {
     color: '#162f56',
     weight: 2,
-    opacity: .6
+    opacity: 0.6,
     fillOpacity: 0
   }
 
