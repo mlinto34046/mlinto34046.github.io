@@ -33,6 +33,9 @@ jQuery.getJSON(temp9311, function (data) {
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S1_93_11
+     if (name = '') {
+	     return 'this unnamed stream'
+     }
      layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let aGeojsonOptions = { 
@@ -69,6 +72,9 @@ let tempBStyle = function (feature) {
  let onEachFeatureB = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S30_2040D
+     if (name = '') {
+	     return 'this unnamed stream'
+     }
      layer.bindPopup('The temperature of ' + name + ' in 2040: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let bGeojsonOptions = { 
