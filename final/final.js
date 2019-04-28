@@ -33,7 +33,7 @@ jQuery.getJSON(temp9311, function (data) {
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S1_93_11
-     if (name = '') {
+     if (name.length = 0) {
 	     return 'this unnamed stream'
      }
      layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
@@ -72,7 +72,7 @@ let tempBStyle = function (feature) {
  let onEachFeatureB = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S30_2040D
-     if (name = '') {
+     if (name.length = 0) {
 	     return 'this unnamed stream'
      }
      layer.bindPopup('The temperature of ' + name + ' in 2040: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
@@ -109,7 +109,7 @@ let tempCStyle = function (feature) {
  let onEachFeatureC = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S32_2080D
-     if (name = '') {
+     if (name.length = 0) {
 	     return 'this unnamed stream'
      }
      layer.bindPopup('The temperature of ' + name + ' in 2080: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
