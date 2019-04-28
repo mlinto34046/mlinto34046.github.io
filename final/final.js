@@ -28,7 +28,6 @@ jQuery.getJSON(temp9311, function (data) {
   return {
     color: tempStroke,
     weight: 2,
-    fillOpacity: 0.2,
   }
  }
  let onEachFeatureA = function (feature, layer) {
@@ -69,7 +68,6 @@ let tempBStyle = function (feature) {
   return {
     color: tempStroke,
     weight: 2,
-    fillOpacity: 0.2,
   }
 }
  let onEachFeatureB = function (feature, layer) {
@@ -137,6 +135,7 @@ let boundsFilter = function (feature) {
 let boundsStyle = {
     color: '#162f56',
     weight: 2,
+    fillOpacity: 0
   }
 
 let boundsGeojsonOptions = { 
