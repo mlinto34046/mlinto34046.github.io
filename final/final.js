@@ -7,6 +7,7 @@ let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager
 let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
 let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
+let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
 jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
@@ -96,7 +97,7 @@ jQuery.getJSON(temp2080, function (data) {
 let tempCStyle = function (feature) {
   let temp = feature.properties.S32_2080D // get the stream's temp attribute
   let tempStroke = '#A8000' // let the initial color be a darker red
-  if ( temp < 12.5 ) { tempStroke = '#00FFC5' } // if the state's median age is less than the average, color it a lighter green
+  if ( temp < 12.5 ) { tempStroke = '#00FFC5' }
 	else if (temp < 15) {tempStroke = '#98E600'}
 	else if (temp < 17.5) {tempStroke = '#FFFF00'}
 	else if (temp < 20) {tempStroke = '#F96C13'}
@@ -120,6 +121,23 @@ let cGeojsonOptions = {
  	style: tempCStyle,
  	onEachFeature: onEachFeatureC
    };
+
+jQuery.getJSON(bounds, function (data) {
+    L.geoJSON(data, {
+      style: boundsStyle,
+      onEachFeature: onEachFeatureBounds
+    }).addTo(demoMap)
+	
+	
+let boundsStyle = function (feature) {
+  let boundStroke = '#162f56' // let the initial color be a darker red
+  
+  return {
+    color: boundStroke,
+    weight: 2,
+    fillOpacity: 0.2,
+  }
+}
 
 let baseMap = {
     "Grayscale": basemap,
