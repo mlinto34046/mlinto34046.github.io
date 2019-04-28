@@ -125,19 +125,23 @@ let cGeojsonOptions = {
 jQuery.getJSON(bounds, function (data) {
     L.geoJSON(data, {
       style: boundsStyle,
-      onEachFeature: onEachFeatureBounds
     }).addTo(demoMap)
+}
 	
 	
 let boundsStyle = function (feature) {
-  let boundStroke = '#162f56' // let the initial color be a darker red
+  let boundsStroke = '#162f56' // let the initial color be a darker red
   
   return {
-    color: boundStroke,
+    color: boundsStroke,
     weight: 2,
     fillOpacity: 0.2,
   }
 }
+
+let cGeojsonOptions = { 
+ 	style: boundsStyle,
+   };
 
 let baseMap = {
     "Grayscale": basemap,
