@@ -136,12 +136,11 @@ let boundsFilter = function (feature) {
 	return true
 }
   
-  return {
+let boundsStyle = {
     color: '#162f56',
     weight: 2,
     fillOpacity: 0.2,
   }
-}
 
 let boundsGeojsonOptions = { 
  	style: boundsStyle,
