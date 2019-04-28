@@ -124,16 +124,20 @@ let cGeojsonOptions = {
 
 jQuery.getJSON(bounds, function (data) {
     L.geoJSON(data, {
-      style: boundsStyle,
+      filter: boundsFilter,
+      style: boundsStyle
     }).addTo(demoMap)
 })
 	
-	
-let boundsStyle = function (feature) {
-  let boundsStroke = '#162f56' // let the initial color be a darker red
+
+let boundsFilter = function (feature) {
+	let county = feature.properties.JURISDIC_2
+	if county = 'King'
+	return true
+}
   
   return {
-    color: boundsStroke,
+    color: '#162f56',
     weight: 2,
     fillOpacity: 0.2,
   }
