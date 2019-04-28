@@ -126,7 +126,7 @@ jQuery.getJSON(bounds, function (data) {
     L.geoJSON(data, {
       style: boundsStyle,
     }).addTo(demoMap)
-}
+})
 	
 	
 let boundsStyle = function (feature) {
