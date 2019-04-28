@@ -136,6 +136,7 @@ let boundsStyle = {
     color: '#162f56',
     weight: 2,
     opacity: 0.6,
+    dashArray: '20,15',
     fillOpacity: 0
   }
 
