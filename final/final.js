@@ -139,7 +139,7 @@ let boundsStyle = function (feature) {
   }
 }
 
-let cGeojsonOptions = { 
+let boundsGeojsonOptions = { 
  	style: boundsStyle,
    };
 
