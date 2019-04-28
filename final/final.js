@@ -106,7 +106,6 @@ let tempCStyle = function (feature) {
   return {
     color: tempStroke,
     weight: 2,
-    fillOpacity: 0.2,
   }
 }
  let onEachFeatureC = function (feature, layer) {
@@ -132,14 +131,12 @@ jQuery.getJSON(bounds, function (data) {
 
 let boundsFilter = function (feature) {
 	let county = feature.properties.JURISDIC_2
-	if (county = 'King')
-	return true
+		if (county === "King") return true
 }
   
 let boundsStyle = {
     color: '#162f56',
     weight: 2,
-    fillOpacity: 0.2,
   }
 
 let boundsGeojsonOptions = { 
