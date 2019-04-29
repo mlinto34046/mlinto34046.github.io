@@ -166,8 +166,8 @@ let sliderControl = L.control.sliderControl({
     range: true,
     timeAttribute: 'S1_93_11',
     timeStrLength: 5,
-    maxValue: '24.19',
-    minValue: '10.34'
+    maxValue: 24.19,
+    minValue: 10.34
 }).addTo(demoMap);
 
 sliderControl.startSlider();
