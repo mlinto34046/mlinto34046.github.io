@@ -162,7 +162,7 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
-var slidervar = document.getElementById('slider');
+let slidervar = document.getElementById('slider');
 noUiSlider.create(slidervar, {
     connect: true,
     start: [ 10.32, 24.19 ],
@@ -196,16 +196,15 @@ rangeMax = document.getElementById('input-number-max').value;
 	//first let's clear the layer:
 layerA.removeLayer(insideA);
 //and repopulate it
-let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
-let sliderA = new L.geoJson(temp9311, {
-        filter:
+let sliderA = jQuery.getJSON(temp9311, function (data) {
+     L.geoJSON(data, {
+     filter:
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
-            },
-    geometryToLayer: tempAStyle
-});
+      geometryToLayer: tempAStyle
+	});
 //and back again into the cluster group
 sliderA.addto(layerA)
 layerNav.removeFrom(demoMap)
 layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
-})
+
