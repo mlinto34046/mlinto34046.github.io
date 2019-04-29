@@ -1,6 +1,6 @@
 let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
-demoMap._initPathRoot();
-demoMap._updatePathViewport();
+var svgLayer = L.svg();
+svgLayer.addTo(demoMap);
 let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
