@@ -71,7 +71,6 @@ rangeMax = document.getElementById('input-number-max').value;
 layerA.clearLayers();
 //and repopulate it
 sliderA = new L.geoJson(temp9311,{
-    onEachFeature: feature.properties.S1_93_11,
         filter:
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
