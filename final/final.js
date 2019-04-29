@@ -166,7 +166,7 @@ let overlayMaps = {
     "Projeted Temperatures in 2080": layerC
 };
 
-let layerNav: L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
 slidervar.noUiSlider.on('update', function( values, handle ) {
     //handle = 0 if min-slider is moved and handle = 1 if max slider is moved
