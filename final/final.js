@@ -206,7 +206,7 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
 	})
      });
 //and back again into the cluster group
-sliderA.addto(layerA)
+sliderA.addTo(layerA)
 layerNav.removeFrom(demoMap)
 layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 })
