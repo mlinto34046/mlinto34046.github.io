@@ -45,6 +45,13 @@ insideA.addTo(layerA);
      }
  }
  
+ let insideA = new L.geoJSON(temp9311, {
+      style: tempAStyle,
+      onEachFeature: onEachFeatureA
+    });
+
+insideA.addTo(layerA);
+ 
 let aGeojsonOptions = { 
  	style: tempAStyle,
  	onEachFeature: onEachFeatureA
