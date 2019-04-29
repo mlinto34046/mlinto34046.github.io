@@ -58,28 +58,6 @@ let aGeojsonOptions = {
 		 
 layerA.addTo(demoMap);
 
-slidervar.noUiSlider.on('update', function( values, handle ) {
-    //handle = 0 if min-slider is moved and handle = 1 if max slider is moved
-    if (handle==0){
-        document.getElementById('input-number-min').value = values[0];
-    } else {
-        document.getElementById('input-number-max').value =  values[1];
-    }
-rangeMin = document.getElementById('input-number-min').value;
-rangeMax = document.getElementById('input-number-max').value;
-	//first let's clear the layer:
-layerA.clearLayers();
-//and repopulate it
-})
-sliderA = new L.geoJson(temp9311,{
-        filter:
-            function(feature, layer) {
-                 return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
-            },
-    geometryToLayer: tempAStyle
-})
-//and back again into the cluster group
-layerA.addLayer(sliderA);
 
 let layerB = L.layerGroup();
 
@@ -188,5 +166,29 @@ let overlayMaps = {
     "Projeted Temperatures in 2080": layerC
 };
 
-L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+let layerGroup: L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
+slidervar.noUiSlider.on('update', function( values, handle ) {
+    //handle = 0 if min-slider is moved and handle = 1 if max slider is moved
+    if (handle==0){
+        document.getElementById('input-number-min').value = values[0];
+    } else {
+        document.getElementById('input-number-max').value =  values[1];
+    }
+rangeMin = document.getElementById('input-number-min').value;
+rangeMax = document.getElementById('input-number-max').value;
+	//first let's clear the layer:
+layerA.removeLayer();
+//and repopulate it
+let sliderA = new L.geoJson(temp9311,{
+        filter:
+            function(feature, layer) {
+                 return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
+            },
+    geometryToLayer: tempAStyle
+});
+//and back again into the cluster group
+sliderA.addto(demoMap)
+layerGroup.removeFrom(demoMap)
+layerGroup = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+})
