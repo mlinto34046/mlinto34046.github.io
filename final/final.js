@@ -14,8 +14,6 @@ let layerA = L.layerGroup();
 //      onEachFeature: onEachFeatureA}
 //      )
 
-insideA.addTo(layerA);
-
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
