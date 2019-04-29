@@ -1,27 +1,4 @@
 let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
-let _initPathRoot = function () {
-		if (!this._pathRoot) {
-			this._pathRoot = L.Path.prototype._createElement('svg');
-			this._panes.overlayPane.appendChild(this._pathRoot);
-
-			if (this.options.zoomAnimation && L.Browser.any3d) {
-				L.DomUtil.addClass(this._pathRoot, 'leaflet-zoom-animated');
-
-				this.on({
-					'zoomanim': this._animatePathZoom,
-					'zoomend': this._endPathZoom
-				});
-			} else {
-				L.DomUtil.addClass(this._pathRoot, 'leaflet-zoom-hide');
-			}
-
-			this.on('moveend', this._updateSvgViewport);
-			this._updateSvgViewport();
-		}
-	},
-_initPathRoot().addTo(demoMap);
-_updatePathViewport().addTo(demoMap);
-    
 let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
