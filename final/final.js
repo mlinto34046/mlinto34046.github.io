@@ -196,7 +196,7 @@ rangeMax = document.getElementById('input-number-max').value;
 	//first let's clear the layer:
 layerA.removeLayer(insideA);
 //and repopulate it
-let sliderA = jQuery.getJSON(temp9311, function (data) {
+let sliderA = new jQuery.getJSON(temp9311, function (data) {
      L.geoJSON(data, {
       style: tempAStyle,
       filter:
