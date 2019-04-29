@@ -1,3 +1,13 @@
+var slidervar = document.getElementById('slider');
+noUiSlider.create(slidervar, {
+    connect: true,
+    start: [ 10.32, 24.19 ],
+    range: {
+        min: 10.32,
+        max: 24.19
+    }
+});
+
 let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
 let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
