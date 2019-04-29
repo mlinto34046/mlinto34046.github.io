@@ -202,7 +202,9 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
       geometryToLayer: tempAStyle
-	});
+	    }
+	})
+     });
 //and back again into the cluster group
 sliderA.addto(layerA)
 layerNav.removeFrom(demoMap)
