@@ -13,8 +13,8 @@ let layerA = L.layerGroup();
 //      style: tempAStyle,
 //      onEachFeature: onEachFeatureA}
 //      )
-jQuery.getJSON(temp9311, function (data) {
-    let insideA = L.geoJSON(data, {
+let insideA = jQuery.getJSON(temp9311, function (data) {
+     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
     }).addTo(layerA)
