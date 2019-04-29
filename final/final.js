@@ -196,7 +196,8 @@ rangeMax = document.getElementById('input-number-max').value;
 	//first let's clear the layer:
 layerA.removeLayer(insideA);
 //and repopulate it
-let sliderA = new L.geoJson(temp9311,{
+let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
+let sliderA = new L.geoJson(temp9311, {
         filter:
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
