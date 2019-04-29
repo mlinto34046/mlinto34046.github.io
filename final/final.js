@@ -209,4 +209,4 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
 sliderA.addto(layerA)
 layerNav.removeFrom(demoMap)
 layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
-
+})
