@@ -9,11 +9,14 @@ let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
-let aInside = L.geoJSON(data, {
+let module = {
       style: tempAStyle,
-      onEachFeature: onEachFeatureA})
+      onEachFeature: onEachFeatureA}
+let insideA = L.geoJSON(data, module
+      )
+let boundCall = insideA.bind(module)
 jQuery.getJSON(temp9311, function (data) {
-  aInside
+      boundCall
     }).addTo(layerA)
 
   let tempAStyle = function (feature) {
