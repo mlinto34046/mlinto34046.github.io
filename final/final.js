@@ -202,8 +202,8 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
 	    }
-      geometryToLayer: tempAStyle
 	    }
+	       geometrytoLayer: tempAStyle
 	}).addTo(layerA)
      });
 //and back again into the layer group
