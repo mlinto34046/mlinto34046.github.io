@@ -202,9 +202,10 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
       filter:
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
-	    })
+	    }
+     })
      }).addTo(layerA)
-     });
+     );
 //and back again into the layer group
 layerNav.removeFrom(demoMap)
 layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
