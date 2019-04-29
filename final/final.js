@@ -166,7 +166,7 @@ let overlayMaps = {
     "Projeted Temperatures in 2080": layerC
 };
 
-let layerGroup: L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+let layerNav: L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
 slidervar.noUiSlider.on('update', function( values, handle ) {
     //handle = 0 if min-slider is moved and handle = 1 if max slider is moved
@@ -190,6 +190,6 @@ let sliderA = new L.geoJson(temp9311,{
 });
 //and back again into the cluster group
 sliderA.addto(demoMap)
-layerGroup.removeFrom(demoMap)
-layerGroup = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+layerNav.removeFrom(demoMap)
+layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 })
