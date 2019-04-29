@@ -9,10 +9,13 @@ let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
-// let insideA = L.geoJSON(data, {
-//      style: tempAStyle,
-//      onEachFeature: onEachFeatureA}
-//      )
+
+let sliderA = jQuery.getJSON(temp9311, function (data) {
+    L.geoJSON(data, {
+      style: tempAStyle,
+      onEachFeature: onEachFeatureA
+    }).addTo(layerA)
+ })
 
 
   let tempAStyle = function (feature) {
@@ -39,12 +42,6 @@ let layerA = L.layerGroup();
      }
  }
  
- let insideA = new L.geoJSON(temp9311, {
-      style: tempAStyle,
-      onEachFeature: onEachFeatureA
-    });
-
-insideA.addTo(layerA);
  
 let aGeojsonOptions = { 
  	style: tempAStyle,
@@ -162,4 +159,17 @@ let overlayMaps = {
 };
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+
+sliderControl = L.control.sliderControl({
+    position: "topright",
+    layer: layerA,
+    range: true,
+    timeAttribute: 'S1_93_11',
+    timeStrLength: 5,
+    maxValue: '24.19',
+    minValue: '10.34'
+});
+
+demoMap.addControl(sliderControl);
+sliderControl.startSlider();
 
