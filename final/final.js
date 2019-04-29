@@ -13,10 +13,12 @@ let layerA = L.layerGroup();
 //      style: tempAStyle,
 //      onEachFeature: onEachFeatureA}
 //      )
-let insideA = L.geoJSON(temp9311, {
+let insideA = new L.geoJSON(temp9311, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
-    }).addTo(layerA)
+    });
+
+insideA.addTo(layerA);
 
 
   let tempAStyle = function (feature) {
