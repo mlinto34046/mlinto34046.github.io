@@ -160,7 +160,7 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
-let sliderControl = L.control.sliderControl({
+L.control.sliderControl({
     position: "topright",
     layer: layerA,
     range: true,
@@ -168,8 +168,7 @@ let sliderControl = L.control.sliderControl({
     timeStrLength: 5,
     maxValue: '24.19',
     minValue: '10.34'
-});
+}).addTo(demoMap);
 
-demoMap.addControl(sliderControl);
 sliderControl.startSlider();
 
