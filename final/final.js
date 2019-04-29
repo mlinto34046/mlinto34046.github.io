@@ -160,7 +160,7 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
-L.control.sliderControl({
+let sliderControl = L.control.sliderControl({
     position: "topright",
     layer: layerA,
     range: true,
