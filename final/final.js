@@ -20,7 +20,7 @@ rangeMax = document.getElementById('input-number-max').value;
 	//first let's clear the layer:
 layerA.clearLayers();
 //and repopulate it
-sliderA = new L.geoJson(exp_9311,{
+sliderA = new L.geoJson(temp9311,{
     onEachFeature: S1_93_11,
         filter:
             function(feature, layer) {
