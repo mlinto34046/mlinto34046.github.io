@@ -9,15 +9,17 @@ let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
-let module = {
-      style: tempAStyle,
-      onEachFeature: onEachFeatureA}
-let insideA = L.geoJSON(data, module
-      )
-let boundCall = insideA.bind(module)
+// let insideA = L.geoJSON(data, {
+//      style: tempAStyle,
+//      onEachFeature: onEachFeatureA}
+//      )
 jQuery.getJSON(temp9311, function (data) {
-      boundCall
+    let insideA = L.geoJSON(data, {
+      style: tempAStyle,
+      onEachFeature: onEachFeatureA
     }).addTo(layerA)
+ })
+
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
@@ -192,7 +194,7 @@ slidervar.noUiSlider.on('update', function( values, handle ) {
 rangeMin = document.getElementById('input-number-min').value;
 rangeMax = document.getElementById('input-number-max').value;
 	//first let's clear the layer:
-layerA.removeLayer(aInside);
+layerA.removeLayer(insideA);
 //and repopulate it
 let sliderA = new L.geoJson(temp9311,{
         filter:
