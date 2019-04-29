@@ -198,12 +198,12 @@ layerA.removeLayer(insideA);
 //and repopulate it
 let sliderA = jQuery.getJSON(temp9311, function (data) {
      L.geoJSON(data, {
-     filter:
+      style: tempAStyle,
+      filter:
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
 	    }
 	    }
-	       geometrytoLayer: tempAStyle
 	}).addTo(layerA)
      });
 //and back again into the layer group
