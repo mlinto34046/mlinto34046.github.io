@@ -8,6 +8,30 @@ noUiSlider.create(slidervar, {
     }
 });
 
+slidervar.noUiSlider.on('update', function( values, handle ) {
+    //handle = 0 if min-slider is moved and handle = 1 if max slider is moved
+    if (handle==0){
+        document.getElementById('input-number-min').value = values[0];
+    } else {
+        document.getElementById('input-number-max').value =  values[1];
+    }
+rangeMin = document.getElementById('input-number-min').value;
+rangeMax = document.getElementById('input-number-max').value;
+	//first let's clear the layer:
+layerA.clearLayers();
+//and repopulate it
+sliderA = new L.geoJson(exp_9311,{
+    onEachFeature: S1_93_11,
+        filter:
+            function(feature, layer) {
+                 return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
+            },
+    geometryToLayer: styleA
+})
+//and back again into the cluster group
+layerA.addLayer(sliderA);
+});
+
 let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
 let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -69,7 +93,7 @@ let layerB = L.layerGroup();
 let tempBStyle = function (feature) {
   let temp = feature.properties.S30_2040D // get the stream's temp attribute
   let tempStroke = '#A8000' // let the initial color be a darker red
-  if ( temp < 12.5 ) { tempStroke = '#00FFC5' } // if the state's median age is less than the average, color it a lighter green
+  if ( temp < 12.5 ) { tempStroke = '#00FFC5' } 
 	else if (temp < 15) {tempStroke = '#98E600'}
 	else if (temp < 17.5) {tempStroke = '#FFFF00'}
 	else if (temp < 20) {tempStroke = '#F96C13'}
