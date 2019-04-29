@@ -75,7 +75,7 @@ sliderA = new L.geoJson(temp9311,{
             function(feature, layer) {
                  return (feature.properties.S1_93_11 <= rangeMax) && (feature.properties.S1_93_11 >= rangeMin);
             },
-    geometryToLayer: styleA
+    geometryToLayer: tempAStyle
 })
 //and back again into the cluster group
 layerA.addLayer(sliderA);
