@@ -1,14 +1,3 @@
-var slidervar = document.getElementById('slider');
-noUiSlider.create(slidervar, {
-    connect: true,
-    start: [ 10.32, 24.19 ],
-    range: {
-        min: 10.32,
-        max: 24.19
-    }
-});
-
-
 let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
 let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -21,7 +10,7 @@ let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
 jQuery.getJSON(temp9311, function (data) {
-    L.geoJSON(data, {
+   let aInside = L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
     }).addTo(layerA)
@@ -168,7 +157,29 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
+var slidervar = document.getElementById('slider');
+noUiSlider.create(slidervar, {
+    connect: true,
+    start: [ 10.32, 24.19 ],
+    step: 0.01,
+    range: {
+        min: 10.32,
+        max: 24.19
+    }
+});
+document.getElementById('input-number-min').setAttribute("value", 10.32);
+		document.getElementById('input-number-max').setAttribute("value", 24.19);
+		var inputNumberMin = document.getElementById('input-number-min');
+		var inputNumberMax = document.getElementById('input-number-max');
+		inputNumberMin.addEventListener('change', function(){
+			slidervar.noUiSlider.set([this.value.round(), null]);
+		});
+		inputNumberMax.addEventListener('change', function(){
+			slidervar.noUiSlider.set([null, this.value]);
+		});
+
 slidervar.noUiSlider.on('update', function( values, handle ) {
+	console.log(handle)
     //handle = 0 if min-slider is moved and handle = 1 if max slider is moved
     if (handle==0){
         document.getElementById('input-number-min').value = values[0];
@@ -178,9 +189,8 @@ slidervar.noUiSlider.on('update', function( values, handle ) {
 rangeMin = document.getElementById('input-number-min').value;
 rangeMax = document.getElementById('input-number-max').value;
 	//first let's clear the layer:
-layerA.removeLayer();
+layerA.removeLayer(aInside);
 //and repopulate it
-let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.geojson'
 let sliderA = new L.geoJson(temp9311,{
         filter:
             function(feature, layer) {
@@ -189,7 +199,7 @@ let sliderA = new L.geoJson(temp9311,{
     geometryToLayer: tempAStyle
 });
 //and back again into the cluster group
-sliderA.addto(demoMap)
+sliderA.addto(layerA)
 layerNav.removeFrom(demoMap)
 layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 })
