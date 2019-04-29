@@ -15,7 +15,6 @@ let aInside = L.geoJSON(data, {
 jQuery.getJSON(temp9311, function (data) {
   aInside
     }).addTo(layerA)
- })
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
