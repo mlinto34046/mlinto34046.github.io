@@ -13,8 +13,10 @@ body {
 }
 
 .navbar{
-margin-left: 5%;
-margin-right: 5%;
+margin-left: 10%;
+margin-right: 10%;
+box-shadow: 5px 0px;
+box-shadow: -5px 0px;
 }
 
 .info { 
