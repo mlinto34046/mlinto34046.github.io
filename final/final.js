@@ -34,7 +34,7 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
  }
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
-      if (name.length = 0) 
+      if (name == '') 
          return {
 	     name: 'this unnamed stream'
      }
