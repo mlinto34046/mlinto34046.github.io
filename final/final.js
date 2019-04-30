@@ -172,6 +172,18 @@ function getColor(d) {
     
 }
 
+function style(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'white',
+			dashArray: '3',
+			fillOpacity: 0.7,
+			fillColor: getColor(feature.properties.density)
+		};
+	}
+
+
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
