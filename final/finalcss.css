@@ -19,7 +19,7 @@ body {
   background: rgba(255,255,255,0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2); 
   border-radius: 5px;
-  outline-color: 'c4c4c4';
+  outline-color: silver;
   outline-width: 3px;
 }
 
