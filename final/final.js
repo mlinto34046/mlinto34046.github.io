@@ -164,7 +164,7 @@ let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
 function getColor(d) {
     return d > 22.5  ? '#A8000' :
-           d > 20  ? '#FF5500 :
+           d > 20  ? '#FF5500' :
            d > 17.5   ? '#F96C13' :
            d > 15   ? '#FFFF00' :
            d > 12.5   ? '#98E600' :
