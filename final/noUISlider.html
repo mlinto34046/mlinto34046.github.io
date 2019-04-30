@@ -2,7 +2,7 @@
 <html><head>
 		<title>leaflet basic example</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js"></script>
@@ -34,7 +34,7 @@
 		}).fitBounds([[25,-130],[52,-60]]);
 		var basemap_0 = L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png');
 		basemap_0.addTo(map);
-		var pointsgroup = L.featureGroup();
+		let pointsgroup = L.featureGroup();
 		function pop_prot(feature, layer) {
 			var popupContent = 'name: ' + String(feature.properties['unit_name']) + '<br>rank: ' + String(feature.properties['scalerank']);
 			layer.bindPopup(popupContent);
@@ -49,7 +49,7 @@
 				fillOpacity: 0.8
 			})
 		}
-		var protecland = new L.geoJson(exp_ne10mparksandprotectedlandspoint,{
+		let protecland = new L.geoJson(exp_ne10mparksandprotectedlandspoint,{
 			onEachFeature: pop_prot,
 			pointToLayer: protecland_marker
 		});
@@ -69,15 +69,15 @@
 				fillOpacity: 0.8
 			})
 		}
-		var popplaces = new L.geoJson(exp_popplaces,{
+		let popplaces = new L.geoJson(exp_popplaces,{
 			onEachFeature: pop_popplaces,
 			pointToLayer: popplaces_marker
 		});
-		var cluster_popplaces= new L.MarkerClusterGroup({showCoverageOnHover: false});
+		let cluster_popplaces= new L.MarkerClusterGroup({showCoverageOnHover: false});
 		cluster_popplaces.addLayer(popplaces);
 		cluster_popplaces.addTo(map);
 		var baseMaps = {'OSM Black & White': basemap_0};
-		var controler = L.control.layers(baseMaps,{"places": cluster_popplaces,"protected land points": pointsgroup},{collapsed:false}).addTo(map);
+		let controler = L.control.layers(baseMaps,{"places": cluster_popplaces,"protected land points": pointsgroup},{collapsed:false}).addTo(map);
 		var slidervar = document.getElementById('slider');
 		noUiSlider.create(slidervar, {
 			connect: true,
