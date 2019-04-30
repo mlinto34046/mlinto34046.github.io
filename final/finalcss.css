@@ -12,6 +12,11 @@ body {
   text-align: center;
 }
 
+.navbar{
+margin-left:-5%;
+margin-right:-5%;
+}
+
 .info { 
   padding: 6px 8px; 
   font: 14px/16px Arial, Helvetica, sans-serif;
