@@ -20,7 +20,7 @@ body {
   box-shadow: 0 0 15px rgba(0,0,0,0.2); 
   border-radius: 5px;
   border-color: silver;
-  oborder-width: 3px;
+  border-width: 3px;
 }
 
 .legend {
