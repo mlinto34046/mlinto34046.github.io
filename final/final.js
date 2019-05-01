@@ -158,7 +158,7 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
-jQuery.('#ex2').slider({
+jQuery('#ex2').slider({
   value: 0,
   formatter: function(value) {
     return 'Disk Space: ' + value + 'GB';
