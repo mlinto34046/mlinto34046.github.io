@@ -38,9 +38,9 @@ layerA.addTo(demoMap);
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S1_93_11
      if (name.length > 0) {
-	     layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')}
+	    return layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')}
      else {
-          layer.bindPopup('The temperature of this unnamed stream from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
+         return layer.bindPopup('The temperature of this unnamed stream from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
      }
  }
  
