@@ -147,6 +147,8 @@ let boundsGeojsonOptions = {
  	style: boundsStyle,
    };
 
+bounds.bringToBack()
+
 layerA.addTo(demoMap);
 
 let baseMap = {
