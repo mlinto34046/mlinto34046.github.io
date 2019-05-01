@@ -41,7 +41,6 @@ layerA.addTo(demoMap);
 	     let name = 'this unnamed stream'
      }
      layer.bindPopup('The temperature of ' + name + ' in 2040: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
-   }
  }
  
  
