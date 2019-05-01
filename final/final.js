@@ -76,10 +76,8 @@ let tempBStyle = function (feature) {
 }
  let onEachFeatureB = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
+     if (name == ' ') {name = 'this unnamed stream'}
      let temp = feature.properties.S30_2040D
-     if (name.length = 0) {
-	     return 'this unnamed stream'
-     }
      layer.bindPopup('The temperature of ' + name + ' in 2040: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let bGeojsonOptions = { 
@@ -112,10 +110,8 @@ let tempCStyle = function (feature) {
 }
  let onEachFeatureC = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
+     if (name == ' ') {name = 'this unnamed stream'}
      let temp = feature.properties.S32_2080D
-     if (name.length = 0) {
-	     return 'this unnamed stream'
-     }
      layer.bindPopup('The temperature of ' + name + ' in 2080: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let cGeojsonOptions = { 
