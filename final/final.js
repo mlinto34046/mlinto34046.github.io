@@ -17,6 +17,8 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
     }).addTo(layerA)
  })
 
+layerA.addTo(demoMap);
+
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
@@ -150,9 +152,7 @@ let boundsGeojsonOptions = {
  	style: boundsStyle,
    };
 
-boundsLayer.bringToBack()
-
-layerA.addTo(demoMap);
+boundsLayer.bringToBack();
 
 let baseMap = {
     "Grayscale": basemap,
