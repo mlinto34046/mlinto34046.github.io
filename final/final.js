@@ -27,7 +27,7 @@ jQuery.getJSON(temp9311, function (data) {
 		else {tempStroke = '#A8000'} // possibly wrong syntax
   return {
     color: tempStroke,
-    weight: 2,
+    weight: 2.5,
   }
  }
  let onEachFeatureA = function (feature, layer) {
