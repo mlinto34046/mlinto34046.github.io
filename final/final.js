@@ -38,7 +38,7 @@ layerA.addTo(demoMap);
      let name = feature.properties.GNIS_NAME
      if (name == ' ') {name = 'this unnamed stream'}
      let temp = feature.properties.S1_93_11
-     layer.bindPopup('The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br><img src="/final/fish-emoji-by-google-small.png" alt="Fish icon"> The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
+     layer.bindPopup('The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br><img src="/final/fish-emoji-by-google-small.png" alt="Fish icon" style="width:12px;height:12px;"> The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
 
  }
      
