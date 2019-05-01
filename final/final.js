@@ -34,7 +34,7 @@ jQuery.getJSON(temp9311, function (data) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S1_93_11
      layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
-     if (name.length = 0) 
+     if (name.length == 0) 
          return {
 	     name: 'this unnamed stream'
      }
