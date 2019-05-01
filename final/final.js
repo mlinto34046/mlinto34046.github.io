@@ -158,9 +158,13 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
-jQuery('#ex2').slider({
-});
-
+jQuery(document).ready(function () {
+            jQuery('#ex2').slider({
+                formatter: function (value) {
+                    return 'Current value: ' + value;
+                }
+            });
+        });
 function getColor(d) {
     return d > 22.5  ? '#ce0000' :
            d > 20  ? '#FF5500' :
