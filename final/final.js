@@ -28,7 +28,7 @@ layerA.addTo(demoMap);
 	else if (temp < 17.5) {tempStroke = '#FFFF00'}
 	else if (temp < 20) {tempStroke = '#F96C13'}
 	else if (temp < 22.5) {tempStroke = '#FF5500'}
-		else {tempStroke = '#A8000'} // possibly wrong syntax
+		else {tempStroke = '#A8000'} 
   return {
     color: tempStroke,
     weight: 2,
@@ -36,9 +36,10 @@ layerA.addTo(demoMap);
  }
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
+     let nameNull = 'this unnamed stream'
      let temp = feature.properties.S1_93_11
-     if (name.length == 0) {
-	     let name = 'this unnamed stream'
+     if (name == null) {
+	     name = nameNull
      }
      layer.bindPopup('The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
  }
