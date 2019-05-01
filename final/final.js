@@ -122,13 +122,16 @@ let cGeojsonOptions = {
  	onEachFeature: onEachFeatureC
    };
 
-let boundsLayer = jQuery.getJSON(bounds, function (data) {
+let boundsLayer = L.featureGroup()
+
+jQuery.getJSON(bounds, function (data) {
     L.geoJSON(data, {
       filter: boundsFilter,
       style: boundsStyle
-    }).addTo(demoMap)
+    }).addTo(boundsLayer)
 })
-	
+
+boundsLayer.addTo(demoMap);
 
 let boundsFilter = function (feature) {
 	let county = feature.properties.JURISDIC_2
