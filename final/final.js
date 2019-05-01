@@ -153,5 +153,5 @@ let overlayMaps = {
     "Projeted Temperatures in 2080": layerC
 };
 
-let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
