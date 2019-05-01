@@ -39,7 +39,7 @@ layerA.addTo(demoMap);
      let nameNull = 'this unnamed stream'
      let temp = feature.properties.S1_93_11
      layer.bindPopup('The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
-      if (name == '') {
+      if (name === '') {
 	     name = nameNull
      }
  }
