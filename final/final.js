@@ -36,7 +36,7 @@ layerA.addTo(demoMap);
  }
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
-     if (name === '') {
+     if (name == '') {
 	     name = 'this unnamed stream'
      }
      let temp = feature.properties.S1_93_11
