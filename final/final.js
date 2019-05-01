@@ -122,7 +122,7 @@ let cGeojsonOptions = {
  	onEachFeature: onEachFeatureC
    };
 
-let bounds = jQuery.getJSON(bounds, function (data) {
+let boundsLayer = jQuery.getJSON(bounds, function (data) {
     L.geoJSON(data, {
       filter: boundsFilter,
       style: boundsStyle
@@ -147,7 +147,7 @@ let boundsGeojsonOptions = {
  	style: boundsStyle,
    };
 
-bounds.bringToBack()
+boundsLayer.bringToBack()
 
 layerA.addTo(demoMap);
 
