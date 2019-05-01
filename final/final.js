@@ -10,7 +10,7 @@ let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.featureGroup();
 
-jQuery.getJSON(temp9311, function (data) {
+let featuresLayer = jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
@@ -157,6 +157,36 @@ let overlayMaps = {
 };
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+
+var searchControl = new L.Control.Search({
+		layer: featuresLayer,
+		propertyName: 'S1_93_11',
+		marker: false,
+		moveToLocation: function(latlng, title, map) {
+			//map.fitBounds( latlng.layer.getBounds() );
+			var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+  			map.setView(latlng, zoom); // access the zoom
+		}
+	});
+
+	searchControl.on('search:locationfound', function(e) {
+		
+		//console.log('search:locationfound', );
+
+		//map.removeLayer(this._markerSearch)
+
+		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+		if(e.layer._popup)
+			e.layer.openPopup();
+
+	}).on('search:collapsed', function(e) {
+
+		featuresLayer.eachLayer(function(layer) {	//restore feature color
+			featuresLayer.resetStyle(layer);
+		});	
+	});
+	
+	map.addControl( searchControl );  //inizialize search control
 
 
 function getColor(d) {
