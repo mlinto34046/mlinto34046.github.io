@@ -38,7 +38,7 @@ layerA.addTo(demoMap);
      let name = feature.properties.GNIS_NAME
      if (name == ' ') {name = 'this unnamed stream'}
      let temp = feature.properties.S1_93_11
-     layer.bindPopup('The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br><img src="/final/fish-emoji-by-google-small.png" alt="Fish icon" style="width:12px;height:12px;"> The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
+     layer.bindPopup('<img src="/final/Thermometersmall.png" alt="Thermometer icon" style="width:15px;height:15px;"> The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br><img src="/final/fish-emoji-by-google-small.png" alt="Fish icon" style="width:15px;height:15px;"> The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
 
  }
      
@@ -78,7 +78,7 @@ let tempBStyle = function (feature) {
      let name = feature.properties.GNIS_NAME
      if (name == ' ') {name = 'this unnamed stream'}
      let temp = feature.properties.S30_2040D
-     layer.bindPopup('The temperature of ' + name + ' in 2040: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
+     layer.bindPopup('<img src="/final/Thermometersmall.png" alt="Thermometer icon" style="width:15px;height:15px;"> The temperature of ' + name + ' in 2040: ' + temp + '<br><img src="/final/fish-emoji-by-google-small.png" alt="Fish icon" style="width:15px;height:15px;"> The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let bGeojsonOptions = { 
  	style: tempBStyle,
@@ -112,7 +112,7 @@ let tempCStyle = function (feature) {
      let name = feature.properties.GNIS_NAME
      if (name == ' ') {name = 'this unnamed stream'}
      let temp = feature.properties.S32_2080D
-     layer.bindPopup('The temperature of ' + name + ' in 2080: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
+     layer.bindPopup('<img src="/final/Thermometersmall.png" alt="Thermometer icon" style="width:15px;height:15px;"> The temperature of ' + name + ' in 2080: ' + temp + '<br><img src="/final/fish-emoji-by-google-small.png" alt="Fish icon" style="width:15px;height:15px;"> The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
    }
 let cGeojsonOptions = { 
  	style: tempCStyle,
