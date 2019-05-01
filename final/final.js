@@ -152,13 +152,13 @@ let boundsGeojsonOptions = {
 
 let baseMap = {
     "Base Map": basemap,
-    "King County Boundary" : boundsLayer
 };
 
 let overlayMaps = {
     "Average Temperatures from 1993 to 2011": layerA,
     "Projected Temperatures in 2040": layerB,
-    "Projected Temperatures in 2080": layerC
+    "Projected Temperatures in 2080": layerC,
+    "King County Boundary" : boundsLayer
 };
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
