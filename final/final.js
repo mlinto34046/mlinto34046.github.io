@@ -122,7 +122,7 @@ let cGeojsonOptions = {
  	onEachFeature: onEachFeatureC
    };
 
-jQuery.getJSON(bounds, function (data) {
+let bounds = jQuery.getJSON(bounds, function (data) {
     L.geoJSON(data, {
       filter: boundsFilter,
       style: boundsStyle
