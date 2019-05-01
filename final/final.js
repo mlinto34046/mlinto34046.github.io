@@ -10,7 +10,7 @@ let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.featureGroup();
 
-let sliderA = jQuery.getJSON(temp9311, function (data) {
+jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
@@ -40,7 +40,7 @@ layerA.addTo(demoMap);
      if (name.length == 0) {
 	     let name = 'this unnamed stream'
      }
-     layer.bindPopup('The temperature of ' + name + ' in 2040: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
+     layer.bindPopup('The average temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.');
  }
  
  
@@ -161,3 +161,46 @@ let overlayMaps = {
 };
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
+
+function getColor(d) {
+    return d > 22.5  ? '#A8000' :
+           d > 20  ? '#FF5500' :
+           d > 17.5   ? '#F96C13' :
+           d > 15   ? '#FFFF00' :
+           d > 12.5   ? '#98E600' :
+    			'#00FFC5';
+    
+}
+
+function style(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'white',
+			dashArray: '3',
+			fillOpacity: 0.7,
+			fillColor: getColor(feature.properties.density)
+		};
+	}
+
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [10.3, 12.5, 15, 17.5, 20, 22.5],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(demoMap);
+
