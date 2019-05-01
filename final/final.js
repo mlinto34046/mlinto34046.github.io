@@ -9,14 +9,12 @@ let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
-
-let sliderA = jQuery.getJSON(temp9311, function (data) {
+jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
     }).addTo(layerA)
  })
-
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
@@ -29,15 +27,18 @@ let sliderA = jQuery.getJSON(temp9311, function (data) {
 		else {tempStroke = '#A8000'} // possibly wrong syntax
   return {
     color: tempStroke,
-    weight: 2.5,
+    weight: 2,
   }
  }
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S1_93_11
      layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
+     if (name.length = 0) 
+         return {
+	     name: 'this unnamed stream'
+     }
  }
- 
  
 let aGeojsonOptions = { 
  	style: tempAStyle,
@@ -70,8 +71,6 @@ let tempBStyle = function (feature) {
     weight: 2,
   }
 }
-
-
  let onEachFeatureB = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
      let temp = feature.properties.S30_2040D
@@ -153,50 +152,8 @@ let baseMap = {
 let overlayMaps = {
     "Average Temperatures from 1993 to 2011": layerA,
     "Projected Temperatures in 2040": layerB,
-    "Projected Temperatures in 2080": layerC
+    "Projeted Temperatures in 2080": layerC
 };
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
-
-function getColor(d) {
-    return d > 22.5  ? '#A8000' :
-           d > 20  ? '#FF5500' :
-           d > 17.5   ? '#F96C13' :
-           d > 15   ? '#FFFF00' :
-           d > 12.5   ? '#98E600' :
-    			'#00FFC5';
-    
-}
-
-function style(feature) {
-		return {
-			weight: 2,
-			opacity: 1,
-			color: 'white',
-			dashArray: '3',
-			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.density)
-		};
-	}
-
-
-var legend = L.control({position: 'bottomright'});
-
-legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [10.3, 12.5, 15, 17.5, 20, 22.5],
-        labels = [];
-
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
-
-    return div;
-};
-
-legend.addTo(demoMap);
 
