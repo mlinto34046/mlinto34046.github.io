@@ -9,12 +9,14 @@ let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
 let layerA = L.layerGroup();
-jQuery.getJSON(temp9311, function (data) {
+
+let sliderA = jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
     }).addTo(layerA)
  })
+
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
@@ -27,16 +29,19 @@ jQuery.getJSON(temp9311, function (data) {
 		else {tempStroke = '#A8000'} // possibly wrong syntax
   return {
     color: tempStroke,
-    weight: 2.5,
+    weight: 2,
   }
  }
  let onEachFeatureA = function (feature, layer) {
      let name = feature.properties.GNIS_NAME
-     if (name == '') {
-	     return 'this unnamed stream'}
      let temp = feature.properties.S1_93_11
      layer.bindPopup('The temperature of ' + name + ' from 1993 to 2011: ' + temp + '<br>The ideal water temperature for Chinook salmon ranges from 12.8 to 17.8 degrees Celsius.')
+     if (name.length = 0) 
+         return {
+	     name: 'this unnamed stream'
+     }
  }
+ 
  
 let aGeojsonOptions = { 
  	style: tempAStyle,
@@ -150,8 +155,7 @@ let baseMap = {
 let overlayMaps = {
     "Average Temperatures from 1993 to 2011": layerA,
     "Projected Temperatures in 2040": layerB,
-    "Projeted Temperatures in 2080": layerC
+    "Projected Temperatures in 2080": layerC
 };
 
-L.control.layers(baseMap, overlayMaps).addTo(demoMap);
-
+let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
