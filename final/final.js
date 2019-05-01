@@ -186,7 +186,7 @@ var searchControl = new L.Control.Search({
 		});	
 	});
 	
-	map.addControl( searchControl );  //inizialize search control
+	demoMap.addControl( searchControl );  //inizialize search control
 
 
 function getColor(d) {
