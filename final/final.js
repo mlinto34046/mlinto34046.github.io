@@ -8,7 +8,7 @@ let temp9311 = '/final/Intersection_of_Chinook_habitat_and_9311_stream_temp_zip.
 let temp2040 = '/final/Stream_Temps_2040.geojson'
 let temp2080 = '/final/Projected_Stream_Temperatures_2080.geojson'
 let bounds = '/final/WA_County_Boundaries.geojson'
-let layerA = L.layerGroup();
+let layerA = L.featureGroup();
 
 let sliderA = jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
@@ -52,7 +52,7 @@ let aGeojsonOptions = {
 		
 
 
-let layerB = L.layerGroup();
+let layerB = L.featureGroup();
 
     jQuery.getJSON(temp2040, function (data) {
     L.geoJSON(data, {
@@ -88,7 +88,7 @@ let bGeojsonOptions = {
  	onEachFeature: onEachFeatureB
    };
 
-let layerC = L.layerGroup();
+let layerC = L.featureGroup();
 
 jQuery.getJSON(temp2080, function (data) {
     L.geoJSON(data, {
