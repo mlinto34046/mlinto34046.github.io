@@ -47,8 +47,7 @@ let aGeojsonOptions = {
  	style: tempAStyle,
  	onEachFeature: onEachFeatureA
    };
-		 
-layerA.addTo(demoMap);
+		
 
 
 let layerB = L.layerGroup();
@@ -147,6 +146,8 @@ let boundsStyle = {
 let boundsGeojsonOptions = { 
  	style: boundsStyle,
    };
+
+layerA.addTo(demoMap);
 
 let baseMap = {
     "Grayscale": basemap,
