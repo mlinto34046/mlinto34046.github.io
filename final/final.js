@@ -133,8 +133,6 @@ jQuery.getJSON(bounds, function (data) {
     }).addTo(boundsLayer)
 })
 
-boundsLayer.addTo(demoMap);
-
 let boundsFilter = function (feature) {
 	let county = feature.properties.JURISDIC_2
 		if (county === "King") return true
@@ -152,10 +150,9 @@ let boundsGeojsonOptions = {
  	style: boundsStyle,
    };
 
-boundsLayer.bringToBack();
-
 let baseMap = {
-    "Grayscale": basemap,
+    "Base Map": basemap,
+    "King County Boundary" : boundsLayer
 };
 
 let overlayMaps = {
