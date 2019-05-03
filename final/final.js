@@ -47,15 +47,6 @@ let aGeojsonOptions = {
 		 
 layerA.addTo(demoMap);
 
-     
- 
- 
-let aGeojsonOptions = { 
- 	style: tempAStyle,
- 	onEachFeature: onEachFeatureA
-   };
-		
-
 
 let layerB = L.featureGroup();
 
