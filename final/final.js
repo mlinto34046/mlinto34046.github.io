@@ -145,7 +145,6 @@ let boundsGeojsonOptions = {
 var LeafIcon = L.Icon.extend({
     options: {
         iconSize:     [25, 25],
-        iconAnchor:   [22, 94],
     }
 });
 let thermIcon = new LeafIcon({iconUrl: 'Thermometersmall.png'});
