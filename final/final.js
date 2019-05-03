@@ -26,8 +26,8 @@ layerA.addTo(demoMap);
 	theExpression = 'feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 ';
 	console.log(theExpression);	
 		
-		myData.clearLayers();
-		demoMap.removeLayer(myData);
+		layerA.clearLayers();
+		demoMap.removeLayer(layerA);
 		
 		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
    L.geoJSON(data, {
@@ -42,8 +42,8 @@ layerA.addTo(demoMap);
 			   featuresLayer.addData(data);
 		});
 
-	    myData.addLayer(featuresLayer);
-  		myData.addTo(demoMap);;
+	    layerA.addLayer(featuresLayer);
+  		layerA.addTo(demoMap);;
     });
 	
 	
@@ -52,8 +52,8 @@ layerA.addTo(demoMap);
 	document.getElementById("radioTwo").addEventListener('click', function(event) {
 	theExpression = 'feature.properties.S1_93_11 > 12.8 || feature.properties.S1_93_11 < 17.8  ';	
 	console.log(theExpression);
-		demoMap.removeLayer(myData);
-		myData.clearLayers();
+		demoMap.removeLayer(layerA);
+		layerA.clearLayers();
 		
 		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
     			L.geoJSON(data, {
@@ -69,8 +69,8 @@ layerA.addTo(demoMap);
 			   featuresLayer.addData(data);
 		});
 
-	    myData.addLayer(featuresLayer);
-		myData.addTo(demoMap);
+	    layerA.addLayer(featuresLayer);
+		layerA.addTo(demoMap);
     });
 	 
 	 
