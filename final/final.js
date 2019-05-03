@@ -21,66 +21,6 @@ let featuresLayer = jQuery.getJSON(temp9311, function (data) {
 
 layerA.addTo(demoMap);
 
-//If Radio Button one is clicked.  
-	document.getElementById("radioOne").addEventListener('click', function(event) {
-	theExpression = 'feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 ';
-	console.log(theExpression);	
-		
-		layerA.clearLayers();
-		demoMap.removeLayer(layerA);
-		
-		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
-   L.geoJSON(data, {
-      style: tempAStyle,
-      onEachFeature: onEachFeatureA,
-      filter: function(feature, layer) {   
-      return (feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 )}
-   })
-    })	
-		
-		jQuery.getJSON(temp9311, function(data) {
-			   featuresLayer.addData(data);
-		});
-
-	    featuresLayer.addTo(layerA);
-  		layerA.addTo(demoMap);;
-    });
-	
-	
-	
-  //If Radio button two is clicked.
-	document.getElementById("radioTwo").addEventListener('click', function(event) {
-	theExpression = 'feature.properties.S1_93_11 > 12.8 || feature.properties.S1_93_11 < 17.8  ';	
-	console.log(theExpression);
-		demoMap.removeLayer(layerA);
-		layerA.clearLayers();
-		
-		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
-    			L.geoJSON(data, {
-      			style: tempAStyle,
-      			onEachFeature: onEachFeatureA,
-     			filter: function(feature, layer) {   
-      				return (feature.properties.S1_93_11 > 12.8 || feature.properties.S1_93_11 < 17.8)}
-    })
-
-		});
-		
-		//jQuery.getJSON(temp9311, function(data) {
-		//	   featuresLayer.addData(data);
-		;(function($){
-  jQuery.getJSON(temp9311, function(data) {
-			   featuresLayer.addData(data);
-})(jQuery);
-		
-		});
-
-	    layerA.addLayer(featuresLayer);
-		layerA.addTo(demoMap);
-    });
-	 
-	 
- 
-
 
   let tempAStyle = function (feature) {
   let temp = feature.properties.S1_93_11 // get the stream's temp attribute
