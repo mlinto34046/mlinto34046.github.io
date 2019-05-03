@@ -148,7 +148,7 @@ var LeafIcon = L.Icon.extend({
     }
 });
 let thermIcon = new LeafIcon({iconUrl: 'Thermometersmall.png'});
-let marker = L.marker([47.656500, -122.114400], {icon: thermIcon}).bindPopup('<li> In 2080, this stream will be the hottest in King County at 24.19°C. </li> <li> That is 2.5°C more than from 1993-2011. </li> <li> <b>Massive fish kills</b> have been known to occur over 22°C. </li>').addTo(demoMap);
+let marker = L.marker([47.656500, -122.114400], {icon: thermIcon}).bindPopup('<li> In 2080, this stream will be the hottest in King County at 24.19°C. </li> <li> That is 2.5°C more than from 1993-2011. </li> <li> <b>Massive fish kills</b> have been known to occur over 22°C. </li>');
 
 let baseMap = {
     "Base Map": basemap,
@@ -158,6 +158,7 @@ let overlayMaps = {
     "Average Temperatures from 1993 to 2011": layerA,
     "Projected Temperatures in 2040": layerB,
     "Projected Temperatures in 2080": layerC,
+    "Points of Interest": marker,
     "King County Boundary" : boundsLayer
 };
 
