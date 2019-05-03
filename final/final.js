@@ -143,7 +143,7 @@ let boundsGeojsonOptions = {
    };
 
 var marker = L.marker([47.656500, -122.114400]).addTo(demoMap);
-marker.bindPopup('<img src="/final/Thermometersmall.png" alt="Thermometer icon" style="width:15px;height:15px;">In 2080, this stream will be the hottest in King County at 24.19°C. <br> That is 2.5°C more than from 1993-2011. <br> <b>Massive fish kills</b> have been known to occur over 22°C.').openPopup()
+marker.bindPopup('<li> In 2080, this stream will be the hottest in King County at 24.19°C. </li> <li> That is 2.5°C more than from 1993-2011. </li> <li> <b>Massive fish kills</b> have been known to occur over 22°C. </li>').openPopup()
 
 let baseMap = {
     "Base Map": basemap,
