@@ -148,7 +148,10 @@ var LeafIcon = L.Icon.extend({
     }
 });
 let thermIcon = new LeafIcon({iconUrl: 'Thermometersmall.png'});
+let fishIcon = new LeafIcon({iconUrl: 'fish-emoji-by-google-small.png'});
 let marker = L.marker([47.656500, -122.114400], {icon: thermIcon}).bindPopup('<li> In 2080, this stream will be the hottest in King County at 24.19°C. </li> <li> That is 2.5°C more than from 1993-2011. </li> <li> <b>Massive fish kills</b> have been known to occur over 22°C. </li>');
+let marker2 = L.marker([47.529697, -122.038902], {icon: fishIcon}).bindPopup('In 2018, a plan was put into place in King County to save local salmon populations. This included a partnership with Issaquah Hatchery.');
+let markerGroup = L.layerGroup([marker, marker2]);
 
 let baseMap = {
     "Base Map": basemap,
@@ -158,7 +161,7 @@ let overlayMaps = {
     "Average Temperatures from 1993 to 2011": layerA,
     "Projected Temperatures in 2040": layerB,
     "Projected Temperatures in 2080": layerC,
-    "Points of Interest": marker,
+    "Points of Interest": markerGroup,
     "King County Boundary" : boundsLayer
 };
 
