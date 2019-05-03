@@ -35,7 +35,7 @@ layerA.addTo(demoMap);
       onEachFeature: onEachFeatureA,
       filter: function(feature, layer) {   
       return (feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 )}
-   }
+   })
     })	
 		
 		$.getJSON(url, function(data) {
