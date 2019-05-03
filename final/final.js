@@ -14,10 +14,66 @@ let featuresLayer = jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
       onEachFeature: onEachFeatureA
+      filter: function(feature, layer) {   
+      return (feature.properties.S1_93_11 < 12.8 && > 17.8 )
     }).addTo(layerA)
  })
 
 layerA.addTo(demoMap);
+
+//If Radio Button one is clicked.  
+	document.getElementById("radioOne").addEventListener('click', function(event) {
+	theExpression = 'feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 ';
+	console.log(theExpression);	
+		
+		myData.clearLayers();
+		demoMap.removeLayer(myData);
+		
+		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
+   L.geoJSON(data, {
+      style: tempAStyle,
+      onEachFeature: onEachFeatureA
+      filter: function(feature, layer) {   
+      return (feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 )
+    })	
+		
+		$.getJSON(url, function(data) {
+			   featuresLayer.addData(data);
+		});
+
+	    myData.addLayer(featuresLayer);
+  		myData.addTo(demoMap);;
+    });
+	
+	
+	
+  //If Radio button two is clicked.
+	document.getElementById("radioTwo").addEventListener('click', function(event) {
+	theExpression = 'feature.properties.S1_93_11 > 12.8 || feature.properties.S1_93_11 < 17.8  ';	
+	console.log(theExpression);
+		demoMap.removeLayer(myData);
+		myData.clearLayers();
+		
+		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
+    L.geoJSON(data, {
+      style: tempAStyle,
+      onEachFeature: onEachFeatureA
+      filter: function(feature, layer) {   
+      return (feature.properties.S1_93_11 > 12.8 || feature.properties.S1_93_11 < 17.8)
+    })
+
+		});
+		
+		$.getJSON(url, function(data) {
+			   featuresLayer.addData(data);
+		});
+
+	    myData.addLayer(featuresLayer);
+		myData.addTo(demoMap);
+    });
+	 
+	 
+ 
 
 
   let tempAStyle = function (feature) {
@@ -158,35 +214,6 @@ let overlayMaps = {
 
 let layerNav = L.control.layers(baseMap, overlayMaps).addTo(demoMap);
 
-var searchControl = new L.Control.Search({
-		layer: featuresLayer,
-		propertyName: 'S1_93_11',
-		marker: false,
-		moveToLocation: function(latlng, title, map) {
-			//map.fitBounds( latlng.layer.getBounds() );
-			var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-  			map.setView(latlng, zoom); // access the zoom
-		}
-	});
-
-	searchControl.on('search:locationfound', function(e) {
-		
-		//console.log('search:locationfound', );
-
-		//map.removeLayer(this._markerSearch)
-
-		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-		if(e.layer._popup)
-			e.layer.openPopup();
-
-	}).on('search:collapsed', function(e) {
-
-		featuresLayer.eachLayer(function(layer) {	//restore feature color
-			featuresLayer.resetStyle(layer);
-		});	
-	});
-	
-searchControl.addTo(demoMap);  //inizialize search control
 
 
 function getColor(d) {
