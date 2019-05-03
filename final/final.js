@@ -13,9 +13,9 @@ let layerA = L.featureGroup();
 let featuresLayer = jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
-      onEachFeature: onEachFeatureA
+      onEachFeature: onEachFeatureA,
       filter: function(feature, layer) {   
-      return (feature.properties.S1_93_11 < 12.8 && > 17.8 )
+      return (feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 )
     }).addTo(layerA)
  })
 
@@ -32,7 +32,7 @@ layerA.addTo(demoMap);
 		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
    L.geoJSON(data, {
       style: tempAStyle,
-      onEachFeature: onEachFeatureA
+      onEachFeature: onEachFeatureA,
       filter: function(feature, layer) {   
       return (feature.properties.S1_93_11 < 12.8 && feature.properties.S1_93_11 > 17.8 )
     })	
@@ -57,7 +57,7 @@ layerA.addTo(demoMap);
 		let featuresLayer = jQuery.getJSON(temp9311, function (data) {
     L.geoJSON(data, {
       style: tempAStyle,
-      onEachFeature: onEachFeatureA
+      onEachFeature: onEachFeatureA,
       filter: function(feature, layer) {   
       return (feature.properties.S1_93_11 > 12.8 || feature.properties.S1_93_11 < 17.8)
     })
