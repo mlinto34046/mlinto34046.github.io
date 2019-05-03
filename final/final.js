@@ -38,7 +38,7 @@ layerA.addTo(demoMap);
    })
     })	
 		
-		$.getJSON(url, function(data) {
+		jQuery.getJSON(temp9311, function(data) {
 			   featuresLayer.addData(data);
 		});
 
@@ -65,7 +65,7 @@ layerA.addTo(demoMap);
 
 		});
 		
-		$.getJSON(url, function(data) {
+		jQuery.getJSON(temp9311, function(data) {
 			   featuresLayer.addData(data);
 		});
 
