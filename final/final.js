@@ -42,7 +42,7 @@ layerA.addTo(demoMap);
 			   featuresLayer.addData(data);
 		});
 
-	    layerA.addLayer(featuresLayer);
+	    featuresLayer.addTo(layerA);
   		layerA.addTo(demoMap);;
     });
 	
@@ -65,8 +65,13 @@ layerA.addTo(demoMap);
 
 		});
 		
-		jQuery.getJSON(temp9311, function(data) {
+		//jQuery.getJSON(temp9311, function(data) {
+		//	   featuresLayer.addData(data);
+		;(function($){
+  jQuery.getJSON(temp9311, function(data) {
 			   featuresLayer.addData(data);
+})(jQuery);
+		
 		});
 
 	    layerA.addLayer(featuresLayer);
