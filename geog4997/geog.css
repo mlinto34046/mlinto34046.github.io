@@ -4,6 +4,7 @@
 }
 body {
   padding-top: 50px;
+  display: block;
 }
 .finalcss {
   padding: 3rem 1.5rem;
