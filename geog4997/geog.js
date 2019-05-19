@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css">
+    <link rel="stylesheet" href="finalcss.css">
+    <link rel="shortcut icon" href="sammyico.png">
+
+    <title>Tracing the effect of climate change on salmon-occupied rivers in King County, WA: A map</title>
+  </head>
+  
+  <body>
+    <div class="finalcss"> 
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #ff9777;">
+            <a class="navbar-brand" href="#"><img src="/final/sammy22.png" width="50" height="50" alt=""> The King County Salmon Project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">The Map<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="project.html">The Project</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="makers.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+
+      <div class="finalcss">
+        <h1>King County Chinook salmon rely on stream temperatures between 12.8° to 17.8°C. </h1>
+        <p class="lead">Now those temperatures are changing.<br>To keep our salmon populations alive, we need to understand how.</p>
+        <p>This map takes a large-scale look at stream temperature changes in Chinook salmon habitat in King County, Washington. It allows users to compare the average stream temperature from 1993-2011 to stream temperature projections in 2040 and 2080. By using this tool, users can see how climate change through time could result in fragmentation and weakening of Chinook salmon populations in King County, Washington.
+      <br> <br>
+		Click the yearly temperature change layers on and off to compare.
+	      </p>
+       
+      </div>
+ 
+	  <hr>
+	
+	  <div id="map"></div>
+	  
+	    <script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script> 		  
+    <script src="final.js"></script> 
+  </body>
+</html>
