@@ -46,6 +46,12 @@ max-height: 50%;
   text-shadow: 1px 1px 1px #C0C0C0;
 }
 
+.navbar {
+  background-color: transparent;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
 nav .navbar-nav li a{
   color: white !important;
   }
