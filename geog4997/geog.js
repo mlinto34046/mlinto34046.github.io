@@ -1,5 +1,5 @@
-let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
-let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+3let demoMap = L.map('map').setView([47.493774, -121.823899], 9)
+let basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {?#
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 19
@@ -210,15 +210,3 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(demoMap);
-
-$(document).ready(function() {
-        // Transition effect for navbar 
-        $(window).scroll(function() {
-          // checks if window is scrolled more than 500px, adds/removes solid class
-          if($(this).scrollTop() > 250) { 
-              $('.navbar').addClass('solid');
-          } else {
-              $('.navbar').removeClass('solid');
-          }
-        });
-});
