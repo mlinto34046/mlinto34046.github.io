@@ -37,6 +37,11 @@ max-width: 50%;
 max-height: 50%;
 }
 
+.navar {
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: bold;
+}
+
 .carousel-item {
   height: 65vh;
   min-height: 300px;
