@@ -42,10 +42,17 @@ max-height: 50%;
 .navbar, .navbar-brand, .nav-link {
   font-family: 'Fjalla One', sans-serif;
   font-weight: bold;
-  font-size: large;
   opacity: 1;
   text-shadow: 1px 1px 1px #C0C0C0;
   }
+
+.nav-link {
+  font-size: large;
+}
+
+.navbar-brand {
+  font-size: x-large;
+}
 
 nav .navbar-nav li a{
   color: white !important;
