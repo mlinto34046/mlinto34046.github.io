@@ -112,6 +112,18 @@ nav .navbar-nav li a{
   border-radius: 0 0 85% 85% / 30%;
 }
 
+.hero-image-map {
+  height: 40vh;
+  min-height: 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: linear-gradient(to bottom right, rgb(151, 226, 11, 0.3), rgb(16, 165, 86, 0.3) ), url('/geog4997/FDA48D4B-45AF-4644-9385-CC0193AE0A1D.png') center center no-repeat;
+  background-size: cover;
+  overflow: hidden !important;
+  border-radius: 0 0 85% 85% / 30%;
+}
+
 .hero-text {
   margin-top: 10vh;
   text-align: center;
