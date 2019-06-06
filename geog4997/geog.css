@@ -148,3 +148,12 @@ padding-right: 1.1rem;
 }
 }
 
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 15px 15px 15x 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {background-color: #e7e7e7;}
