@@ -39,19 +39,16 @@ max-width: 50%;
 max-height: 50%;
 }
 
-.navbar-default {
-
-  .navbar, .navbar-brand, .nav-link {
-    font-family: 'Fjalla One', sans-serif;
-    font-weight: bold;
-    opacity: 1;
-    text-shadow: 1px 1px 1px #C0C0C0;
+.navbar, .navbar-brand, .nav-link {
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: bold;
+  opacity: 1;
+  text-shadow: 1px 1px 1px #C0C0C0;
   }
 
-  nav .navbar-nav li a{
-    color: white !important;
+nav .navbar-nav li a{
+  color: white !important;
     }
-}
 
 .navbar.solid {
   background-color: #ffbf00;
