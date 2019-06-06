@@ -113,11 +113,11 @@ nav .navbar-nav li a{
 }
 
 .hero-text {
-  margin-top: 20%;
+  margin-top: 10vh;
   text-align: center;
   font-family: 'Fjalla One', sans-serif;
   font-weight: bold;
-  font-size: 72pt;
+  font-size: 10vh;
   color: white;
   opacity: 1;
 }	
