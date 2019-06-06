@@ -84,6 +84,19 @@ nav .navbar-nav li a{
   border-radius: 0 0 85% 85% / 30%;
 }
 
+.hero-image {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-image: url('/geog4997/8AAE2359-3443-4147-BC18-FE3D9E612EAC.png');
+  background-size: cover;
+  overflow: hidden !important;
+  border-radius: 0 0 85% 85% / 30%;
+}
+
 .portfolio-item {
   margin-bottom: 30px;
 }
