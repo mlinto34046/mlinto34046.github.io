@@ -55,6 +55,14 @@ nav .navbar-nav li a{
   transition: background-color 2s ease 0s;
 }
 
+.carousel img{ 
+  border-radius: 55px; 
+}
+
+.carousel-control {
+  background-image:none !important; 
+}
+
 .carousel-item {
   height: 65vh;
   min-height: 300px;
