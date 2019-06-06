@@ -103,11 +103,10 @@ nav .navbar-nav li a{
 .hero-image-gal {
   height: 40vh;
   min-height: 300px;
-  background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background: linear-gradient(to bottom right, rgb(9, 232, 224, 0.3), rgb(8, 107, 219, 0.3) ), url('/geog4997/C25B4D29-6379-4637-B012-42565B7D1C6A.jpeg');
+  background: linear-gradient(to bottom right, rgb(9, 232, 224, 0.3), rgb(8, 107, 219, 0.3) ), url('/geog4997/C25B4D29-6379-4637-B012-42565B7D1C6A.jpeg') center center no-repeat;
   background-size: cover;
   overflow: hidden !important;
   border-radius: 0 0 85% 85% / 30%;
