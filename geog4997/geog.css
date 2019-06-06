@@ -95,7 +95,7 @@ nav .navbar-nav li a{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background: linear-gradient(to bottom right, yellow, dimgrey, transparent), url('/geog4997/8AAE2359-3443-4147-BC18-FE3D9E612EAC.png');
+  background: linear-gradient(to bottom right, rgb(255, 225, 0, .5), dimgrey, transparent), url('/geog4997/8AAE2359-3443-4147-BC18-FE3D9E612EAC.png');
   background-size: cover;
   overflow: hidden !important;
   border-radius: 0 0 85% 85% / 30%;  
