@@ -112,6 +112,16 @@ nav .navbar-nav li a{
   border-radius: 0 0 85% 85% / 30%;
 }
 
+.hero-text {
+  top: 20vh;
+  text-align: center;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: bold;
+  font-size: xx-large;
+  font-color: white;
+  opacity: 1;
+
+
 .portfolio-item {
   margin-bottom: 30px;
 }
