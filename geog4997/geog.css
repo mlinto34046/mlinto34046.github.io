@@ -39,13 +39,6 @@ max-width: 50%;
 max-height: 50%;
 }
 
-.navbar, .navbar-brand, .nav-link {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: bold;
-  opacity: 1;
-  text-shadow: 1px 1px 1px #C0C0C0;
-}
-
 .navbar-default {
 
   .navbar, .navbar-brand, .nav-link {
@@ -62,7 +55,7 @@ max-height: 50%;
 
 .navbar.solid {
   background-color: #ffbf00;
-  transition: background-color 2s ease 0s;
+  transition: background-color 1.5s ease 0s;
 
   .navbar, .navbar-brand, .nav-link {
     font-family: 'Fjalla One', sans-serif;
