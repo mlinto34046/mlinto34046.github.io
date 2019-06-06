@@ -96,13 +96,6 @@ nav .navbar-nav li a{
   border-radius: 0 0 85% 85% / 30%;
 }
 
-.hero-text {
-  vertical-align: middle;
-  display: inline-block;
-  height:50%;
-  margin: auto;
-}
-
 .portfolio-item {
   margin-bottom: 30px;
 }
