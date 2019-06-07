@@ -87,7 +87,7 @@ nav .navbar-nav li a{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: contain;
+  background-size: cover;
   /*bottom: 25vh;*/
   overflow: hidden !important;
   z-index: 1000;
