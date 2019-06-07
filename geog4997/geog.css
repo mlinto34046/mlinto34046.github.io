@@ -9,7 +9,7 @@ body {
 }
 
 .center {
-  width: 85%;
+  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
   text-align: center !important;
