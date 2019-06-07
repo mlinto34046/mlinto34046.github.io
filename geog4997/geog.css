@@ -76,7 +76,8 @@ nav .navbar-nav li a{
 }
 
 .carousel img{ 
-  border-radius: 55px; 
+  border-radius: 55px;
+  bottom: 25vh;
 }
 
 .carousel-control {
