@@ -6,7 +6,11 @@
 }
 body {
   padding-top: 0px;
+}
 
+.center {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .pad {
