@@ -208,4 +208,8 @@ padding-right: 1.1rem;
   width: 12%;
 }
 
-.button:hover {background-color: #;}
+.button:hover {background-color: #dcdcdc;}
+
+.text {
+   text-align: center !important;
+}
