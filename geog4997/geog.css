@@ -75,8 +75,6 @@ nav .navbar-nav li a{
 
 .carousel img{ 
   border-radius: 55px;
-  max-width: 1750px;
-  margin: 0 auto;
 }
 
 .carousel-control {
@@ -89,7 +87,7 @@ nav .navbar-nav li a{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: contain;
   /*bottom: 25vh;*/
   overflow: hidden !important;
   z-index: 1000;
