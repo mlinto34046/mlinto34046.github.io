@@ -82,7 +82,7 @@ nav .navbar-nav li a{
 }
 
 .carousel-item {
-  height: 65vh;
+  height: 75vh;
   min-height: 300px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
