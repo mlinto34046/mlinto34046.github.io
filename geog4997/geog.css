@@ -4,14 +4,14 @@
   margin-bottom: 7.5vh;
 }
   html,body {
-    width: 100%;
+    width: 100% !important;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
 }
 
 .center {
-  max-width: 1600px;
+  max-width: 1600px !important;
   margin: auto;
 }
 
