@@ -89,6 +89,8 @@ nav .navbar-nav li a{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
   /*bottom: 25vh;*/
   overflow: hidden !important;
   z-index: 1000;
