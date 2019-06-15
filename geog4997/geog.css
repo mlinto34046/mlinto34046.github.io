@@ -11,6 +11,7 @@ body {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .pad {
@@ -87,6 +88,7 @@ nav .navbar-nav li a{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment:fixed;
   /*bottom: 25vh;*/
   overflow: hidden !important;
   z-index: 1000;
