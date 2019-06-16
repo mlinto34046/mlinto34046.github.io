@@ -82,6 +82,7 @@
   </form>
   </div> -->
       
+  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
   <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
@@ -111,13 +112,13 @@ FilePond.create(
 	document.querySelector('input')
 );
 	
-$(document).ready(function(){
+jQuery(document).ready(function(){
       //based on: http://stackoverflow.com/a/9622978
-      $('#filepond').on('submit', function(e){
+      jQuery('#filepond').on('submit', function(e){
         e.preventDefault();
         var form = e.target;
         var data = new FormData(form);
-        $.ajax({
+        jQuery.ajax({
           url: form.action,
           method: form.method,
           processData: false,
@@ -125,7 +126,7 @@ $(document).ready(function(){
           data: data,
           processData: false,
           success: function(data){
-            $('#result').text(data)
+            jQuery('#result').text(data)
           }
         })
       })
