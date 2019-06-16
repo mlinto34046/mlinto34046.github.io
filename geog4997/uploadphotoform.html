@@ -108,7 +108,7 @@ FilePond.registerPlugin(
 );
 
 // Select the file input and use create() to turn it into a pond
-var x = FilePond.create(
+var pond = FilePond.create(
 	document.querySelector('input', {
     server: 'https://mlinto34046.github.io/geog4997/photoupload/upload.php'
 })
@@ -116,11 +116,18 @@ var x = FilePond.create(
 	
 	// add our pond to the body
 
-console.log(x)	
-FilePond.setOptions({ itemInsertLocation: "after" });
-FilePond.parse(document.body);	
-myFilePond.addFile(x)
-console.log(myFilePond)
+FilePond.setOptions({
+    server: {
+        process: './process.php',
+        revert: './revert.php',
+        restore: './restore.php',
+        load: './load.php',
+        fetch: './fetch.php'
+    };
+    itemInsertLocation: "after" ;
+});
+	
+console.log(pond)
 
 </script>
 	 
