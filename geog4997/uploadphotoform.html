@@ -82,38 +82,9 @@
   <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
    
- <h1>jQuery 3.0 AJAX Form with File Upload Example</h1>
-  <h2>Note: The file submitted will be publicly accessible. Cat GIFs only!</h2>
-  <a id="source" href="http://stackoverflow.com/a/9622978">Based on: http://stackoverflow.com/a/9622978</a>
-<form id="ajax-upload" action="https://mlinto34046.github.io/geog4997/photoupload/process.php" method="post" enctype="multipart/form-data">
-File: <input type="file" name="submitted">
-<input type="hidden" name="someParam" value="someValue"/>
-  <button type="submit">Send via AJAX!</button>
-</form>
-  <div>
-    Copy/Paste the URL below to see the uploaded file 
-    <div id="result"></div>
-  </div>  
+
 <script>
-	jQuery(document).ready(function(){
-      //based on: http://stackoverflow.com/a/9622978
-      jQuery('#ajax-upload').on('submit', function(e){
-        e.preventDefault();
-        var form = e.target;
-        var data = new FormData(form);
-        jQuery.ajax({
-          url: form.action,
-          method: form.method,
-          processData: false,
-          contentType: false,
-          data: data,
-          processData: false,
-          success: function(data){
-            jQuery('#result').text(data)
-          }
-        })
-      })
-    })
+
 	 </script>
 </body>
 	 
