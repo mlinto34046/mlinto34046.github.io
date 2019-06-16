@@ -91,93 +91,40 @@
   <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
    
+ <h1>jQuery 3.0 AJAX Form with File Upload Example</h1>
+  <h2>Note: The file submitted will be publicly accessible. Cat GIFs only!</h2>
+  <a id="source" href="http://stackoverflow.com/a/9622978">Based on: http://stackoverflow.com/a/9622978</a>
+<form id="ajax-upload" action="https://mlinto34046.github.io/geog4997/photoupload/process.php" method="post" enctype="multipart/form-data">
+File: <input type="file" name="submitted">
+<input type="hidden" name="someParam" value="someValue"/>
+  <button type="submit">Send via AJAX!</button>
+</form>
+  <div>
+    Copy/Paste the URL below to see the uploaded file 
+    <div id="result"></div>
+  </div>  
 <script>
-FilePond.registerPlugin(
-	
-	// encodes the file as base64 data
-  FilePondPluginFileEncode,
-	
-	// validates the size of the file
-	FilePondPluginFileValidateSize,
-	
-	// corrects mobile image orientation
-	FilePondPluginImageExifOrientation,
-	
-	// previews dropped images
-  FilePondPluginImagePreview
-);
-// Select the file input and use create() to turn it into a pond
-var pond = FilePond.create(
-	document.querySelector('input', {
-    server: 'https://mlinto34046.github.io/geog4997/photoupload/upload.php'
-})
-);
-	
-	// add our pond to the body
-FilePond.setOptions({
-    server: {
-	url: 'https://mlinto34046.github.io/geog4997/photoupload/',
-        // disable fetch by explicitely setting it to null, 
-        // if not set to null, FilePond will try to automatically 
-        // call the ?fetch= and ?load= endpoints
-        fetch: null,
-        load: null,
-        // define custom process method
-        process: (fieldName, file, metadata, load, error, progress, abort) => {
-            // Create data object containing the file and the file metadata
-            const formData = new FormData();
-            formData.append(fieldName, file, file.name);
-            formData.append(fieldName, JSON.stringify(metadata));
-	    for(var pair of formData.entries()) {
-                console.log(pair[0]+ ', '+ pair[1]); 
-                  };
-	    
-            // Progress indicator supported, set progress to 25% of 1
-            progress(true, .25, 1); 
-            // progress(false); // for infinite upload mode
-            // Fake completion after 1 second
-            const timer = setTimeout(() => {
-                load('unique-file-id'); // or { body: 'unique-file-id' }
-            }, 1000);
-            // Should expose an abort method so the request can be cancelled by the user
-            return {
-                abort: () => {
-                    // abort your request here (we clear timer for demo purposes)
-                    clearTimeout(timer);
-                    // updates FilePond interface
-                    abort();
-                }
-            };
-        },
-        restore: (uniqueFileId, load, error, progress, abort, headers) => {
-            // Should get the temporary file object from the server
-            // ...
-            console.log(uniqueFileId);
-            // create fake file
-            var blob = new File([uniqueFileId], 'test.txt', { type: 'text/plain' });
-            // Fake completion after 1 second
-            const timer = setTimeout(() => {
-                load(blob);
-            }, 1000);
-            // Should expose an abort method so the request can be cancelled by the user
-            return {
-                abort: () => {
-                    // abort your request here (we clear timer for demo purposes)
-                    clearTimeout(timer);
-                    // updates FilePond interface
-                    abort();
-                }
-            };
-        },
-        revert: (uniqueFileId, load, error) => {
-            // remove file from server here
-            console.log(uniqueFileId);
-            // we done
-            load();
-        }
-    }
-});
-</script>
+	jQuery(document).ready(function(){
+      //based on: http://stackoverflow.com/a/9622978
+      jQuery('#ajax-upload').on('submit', function(e){
+        e.preventDefault();
+        var form = e.target;
+        var data = new FormData(form);
+        jQuery.ajax({
+          url: form.action,
+          method: form.method,
+          processData: false,
+          contentType: false,
+          data: data,
+          processData: false,
+          success: function(data){
+            jQuery('#result').text(data)
+          }
+        })
+      })
+    })
+	 </script>
+</body>
 	 
 </body>
 
