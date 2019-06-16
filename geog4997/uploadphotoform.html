@@ -52,7 +52,7 @@
 
   <header>
   
-  <form>
+  <form action="/photoupload/">
   <div class="form-row">
     <div class="col">
       <input type="text" class="form-control" placeholder="First name">
@@ -67,16 +67,49 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlFile1"></label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <input type="file" class="my-pond" id="exampleFormControlFile1" name="filepond">
   </div>
   </form>
   </header>
       
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-  <script src="http://malsup.github.com/jquery.form.js"></script> 
-  <script src="geog2.js"></script> 
+  <script>
+  $(function(){
+  
+    // First register any plugins
+    $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+
+    // Turn input element into a pond
+    $('.my-pond').filepond();
+
+    // Set allowMultiple property to true
+    $('.my-pond').filepond('allowMultiple', true);
+  
+    // Listen for addfile event
+    $('.my-pond').on('FilePond:addfile', function(e) {
+        console.log('file added event', e);
+    });
+
+    // Manually add a file using the addfile method
+    $('.my-pond').first().filepond('addFile', 'index.html').then(function(file){
+      console.log('file added', file);
+    });
+  
+  });
+</script>
+
+<!-- include jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+<!-- include FilePond library -->
+<script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+<!-- include FilePond plugins -->
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+
+<!-- include FilePond jQuery adapter -->
+<script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
