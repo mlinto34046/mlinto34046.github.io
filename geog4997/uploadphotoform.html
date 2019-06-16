@@ -131,7 +131,7 @@ FilePond.setOptions({
             const formData = new FormData();
             formData.append(fieldName, file, file.name);
             formData.append(fieldName, JSON.stringify(metadata));
-	    console.log(formData);
+	    console.log(JSON.parse(JSON.stringify(formData)));
 	    
 
             // Progress indicator supported, set progress to 25% of 1
