@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link rel="stylesheet" href="geog.css">
     <link rel="shortcut icon" href="river-icon-png-4small.png">
 
@@ -77,44 +78,30 @@
   </form>
   </div> -->
       
-
-<!-- include jQuery library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-
-<!-- include FilePond library -->
-<script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
-
-<!-- include FilePond plugins -->
-<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
-
-<!-- include FilePond jQuery adapter -->
-<script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
-
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
    
 <script>
-  jQuery(function(){
-  
-    // First register any plugins
-    jQuery.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+FilePond.registerPlugin(
+	
+	// encodes the file as base64 data
+  FilePondPluginFileEncode,
+	
+	// validates the size of the file
+	FilePondPluginFileValidateSize,
+	
+	// corrects mobile image orientation
+	FilePondPluginImageExifOrientation,
+	
+	// previews dropped images
+  FilePondPluginImagePreview
+);
 
-    // Turn input element into a pond
-    jQuery('.my-pond').filepond();
-
-    // Set allowMultiple property to true
-    jQuery('.my-pond').filepond('allowMultiple', true);
-  
-    // Listen for addfile event
-    jQuery('.my-pond').on('FilePond:addfile', function(e) {
-        console.log('file added event', e);
-    });
-
-    // Manually add a file using the addfile method
-    jQuery('.my-pond').first().filepond('addFile', 'index.html').then(function(file){
-      console.log('file added', file);
-    });
-  
-  });
+// Select the file input and use create() to turn it into a pond
+FilePond.create(
+	document.querySelector('input')
+);
 </script>
 
 </body>
