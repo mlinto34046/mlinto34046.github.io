@@ -108,29 +108,14 @@ FilePond.registerPlugin(
 );
 
 // Select the file input and use create() to turn it into a pond
-FilePond.create(
+var x = FilePond.create(
 	document.querySelector('input')
 );
 	
-jQuery(document).ready(function(){
-      //based on: http://stackoverflow.com/a/9622978
-      jQuery('#filepond').on('submit', function(e){
-        e.preventDefault();
-        var form = e.target;
-        var data = new FormData(form);
-        jQuery.ajax({
-          url: form.action,
-          method: form.method,
-          processData: false,
-          contentType: false,
-          data: data,
-          processData: false,
-          success: function(data){
-            jQuery('#result').text(data)
-          }
-        })
-      })
-    })
+	// add our pond to the body
+x.appendTo(document.body);
+	
+
 </script>
 	 
 </body>
