@@ -107,7 +107,7 @@ FilePond.registerPlugin(
   FilePondPluginImagePreview
 );
 // Select the file input and use create() to turn it into a pond
-var pond = FilePond.create( 
+var pond = FilePond.create({
 	files: [
         {
             // the server file reference
@@ -125,7 +125,7 @@ var pond = FilePond.create(
                 }
             }
         }
-    ],
+    ]},
 	document.querySelector('input', {
     server: 'https://mlinto34046.github.io/geog4997/photoupload/upload.php'
 })
