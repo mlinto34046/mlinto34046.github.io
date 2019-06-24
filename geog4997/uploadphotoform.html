@@ -63,6 +63,14 @@
   <input class="file-uploader__submit-button" type="submit" value="Upload">
 </form>
   </div>
+	    
+
+    <!-- Babel polyfill, contains Promise -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
+
+
+    <!-- Get FilePond polyfills from the CDN -->
+    <script src="https://unpkg.com/filepond-polyfill/dist/filepond-polyfill.js"></script>
       
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -93,70 +101,21 @@ const pond = FilePond.create(inputElement, {
     server: 'https://localhost/temp'
 });
 	
-	// add our pond to the body
-FilePond.setOptions({
-    server: {
-	url: 'https://mlinto34046.github.io/geog4997/photoupload/',
-        // disable fetch by explicitely setting it to null, 
-        // if not set to null, FilePond will try to automatically 
-        // call the ?fetch= and ?load= endpoints
-        fetch: null,
-        load: null,
-        // define custom process method
-        process: (fieldName, file, metadata, load, error, progress, abort) => {
-            // Create data object containing the file and the file metadata
-            const formData = new FormData();
-            formData.append(fieldName, file, file.name);
-            formData.append(fieldName, JSON.stringify(metadata));
-	    for(var pair of formData.entries()) {
-                console.log(pair[0]+ ', '+ pair[1]); 
-                  };
-	    
-            // Progress indicator supported, set progress to 25% of 1
-            progress(true, .25, 1); 
-            // progress(false); // for infinite upload mode
-            // Fake completion after 1 second
-            const timer = setTimeout(() => {
-                load('unique-file-id'); // or { body: 'unique-file-id' }
-            }, 1000);
-            // Should expose an abort method so the request can be cancelled by the user
-            return {
-                abort: () => {
-                    // abort your request here (we clear timer for demo purposes)
-                    clearTimeout(timer);
-                    // updates FilePond interface
-                    abort();
-                }
-            };
-        },
-        restore: (uniqueFileId, load, error, progress, abort, headers) => {
-            // Should get the temporary file object from the server
-            // ...
-            console.log(uniqueFileId);
-            // create fake file
-            var blob = new File([uniqueFileId], 'test.txt', { type: 'text/plain' });
-            // Fake completion after 1 second
-            const timer = setTimeout(() => {
-                load(blob);
-            }, 1000);
-            // Should expose an abort method so the request can be cancelled by the user
-            return {
-                abort: () => {
-                    // abort your request here (we clear timer for demo purposes)
-                    clearTimeout(timer);
-                    // updates FilePond interface
-                    abort();
-                }
-            };
-        },
-        revert: (uniqueFileId, load, error) => {
-            // remove file from server here
-            console.log(uniqueFileId);
-            // we done
-            load();
-        }
-    }
-});
+    // Set default FilePond options
+    FilePond.setOptions({
+        // maximum allowed file size
+        maxFileSize: '5MB',
+        // crop the image to a 1:1 ratio
+        imageCropAspectRatio: '1:1',
+        // resize the image
+        imageResizeTargetWidth: 200,
+        // upload to this server end point
+        server: 'api/'
+    });
+    // Turn a file input into a file pond
+    var pond = FilePond.create(document.querySelector('input[type="file"]'));
+
+
 </script>
 </body>
 	 
