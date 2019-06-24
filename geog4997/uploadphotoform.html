@@ -88,11 +88,10 @@ FilePond.registerPlugin(
   FilePondPluginImagePreview
 );
 // Select the file input and use create() to turn it into a pond
-var pond = FilePond.create(
-	document.querySelector('input', {
-    server: 'http://192.168.33.10'
-})
-);
+const inputElement = document.querySelector('input[type="file"]');
+const pond = FilePond.create(inputElement, {
+    server: 'https://localhost/temp'
+});
 	
 	// add our pond to the body
 FilePond.setOptions({
