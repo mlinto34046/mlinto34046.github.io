@@ -52,7 +52,7 @@
     </div>
   </nav>
   
- <div style="margin: 10vh;"> 
+    <!-- <div style="margin: 10vh;"> 
 <form method="post" class="file-uploader" action="https://mlinto3.github.io/geog4997/submit.php" enctype="multipart/form-data">
   <div class="file-uploader__message-area">
     <p>Select a file to upload</p>
@@ -62,14 +62,14 @@
   </div>
   <input class="file-uploader__submit-button" type="submit" value="Upload">
 </form>
-  </div>
+  </div>  -->
 	    
 
-    <!-- Babel polyfill, contains Promise -->
+    <!-- Babel polyfill, contains Promise
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
 
 
-    <!-- Get FilePond polyfills from the CDN -->
+    <!-- Get FilePond polyfills from the CDN
     <script src="https://unpkg.com/filepond-polyfill/dist/filepond-polyfill.js"></script>
       
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -78,45 +78,31 @@
   <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
   <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
   <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-      
-<script>
-FilePond.registerPlugin(
-	
-	// encodes the file as base64 data
-  FilePondPluginFileEncode,
-	
-	// validates the size of the file
-	FilePondPluginFileValidateSize,
-	
-	// corrects mobile image orientation
-	FilePondPluginImageExifOrientation,
-	
-	// previews dropped images
-  FilePondPluginImagePreview
-);
-// Select the file input and use create() to turn it into a pond
-const inputElement = document.querySelector('input[type="file"]');
-const pond = FilePond.create(inputElement, {
-    server: 'https://localhost/temp'
-});
-	
-    // Set default FilePond options
-    FilePond.setOptions({
-        // maximum allowed file size
-        maxFileSize: '5MB',
-        // crop the image to a 1:1 ratio
-        imageCropAspectRatio: '1:1',
-        // resize the image
-        imageResizeTargetWidth: 200,
-        // upload to this server end point
-        server: 'api/'
-    });
-    // Turn a file input into a file pond
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script -->
 
-</script>
-</body>
-	 
-</body>
+  <form action="http://geog4997Bucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+    Key to upload: 
+    <input type="input"  name="key" value="user/user1/${filename}" /><br />
+    <input type="hidden" name="acl" value="public-read" />
+    <input type="hidden" name="success_action_redirect" value="http://sigv4examplebucket.s3.amazonaws.com/successful_upload.html" />
+    Content-Type: 
+    <input type="input"  name="Content-Type" value="image/jpeg" /><br />
+    <input type="hidden" name="x-amz-meta-uuid" value="14365123651274" /> 
+    <input type="hidden" name="x-amz-server-side-encryption" value="AES256" /> 
+    <input type="text"   name="X-Amz-Credential" value="AKIAIOSFODNN7EXAMPLE/20151229/us-east-1/s3/aws4_request" />
+    <input type="text"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
+    <input type="text"   name="X-Amz-Date" value="20151229T000000Z" />
+
+    Tags for File: 
+    <input type="input"  name="x-amz-meta-tag" value="" /><br />
+    <input type="hidden" name="Policy" value='<Base64-encoded policy string>' />
+    <input type="hidden" name="X-Amz-Signature" value="<signature-value>" />
+    File: 
+    <input type="file"   name="file" /> <br />
+    <!-- The elements after this will be ignored -->
+    <input type="submit" name="submit" value="Upload to Amazon S3" />
+  </form>
+	   
+ </body>
 
 </html>
