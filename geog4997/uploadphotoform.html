@@ -52,86 +52,18 @@
     </div>
   </nav>
   
-    <!-- <div style="margin: 10vh;"> 
-<form method="post" class="file-uploader" action="https://mlinto3.github.io/geog4997/submit.php" enctype="multipart/form-data">
-  <div class="file-uploader__message-area">
-    <p>Select a file to upload</p>
-  </div>
-  <div class="file-chooser">
-    <input class="file-chooser__input" type="file">
-  </div>
-  <input class="file-uploader__submit-button" type="submit" value="Upload">
-</form>
-  </div>  -->
-	    
-
-    <!-- Babel polyfill, contains Promise
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
-
-
-    <!-- Get FilePond polyfills from the CDN
-    <script src="https://unpkg.com/filepond-polyfill/dist/filepond-polyfill.js"></script>
-      
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
-  <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-  <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
-  <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-  <script src="https://unpkg.com/filepond/dist/filepond.js"></script -->
-    <script type="text/javascript" src="Javascript/jquery.form.js"></script>
-    <script type="text/javascript">
-        $(function() {            
-          $('#fileUploadForm').ajaxForm({                 
-            beforeSubmit: ShowRequest,
-            success: SubmitSuccesful,
-            error: AjaxError                               
-          });                                    
-        });            
-
-        function ShowRequest(formData, jqForm, options) {
-          var queryString = $.param(formData);
-          alert('BeforeSend method: \n\nAbout to submit: \n\n' + queryString);
-          return true;
-        }
-
-        function AjaxError() {
-          alert("An AJAX error occured.");
-        }
-
-        function SubmitSuccesful(responseText, statusText) {        
-          alert("SuccesMethod:\n\n" + responseText);
-        }    
-    </script>
-    
-    <form id="fileUploadForm" method="POST" action="upload.php" enctype="multipart/form-data">
-      <input type="text" name="filename" />
-      <input type="file" id="postedFile" name="postedFile" />
-      <input type="submit" value="Submit" />
-    </form>
-
-  <!-- <form action="http://geog4997Bucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
-    Key to upload: 
-    <input type="input"  name="key" value="user/user1/${filename}" /><br />
-    <input type="hidden" name="acl" value="public-read" />
-    <input type="hidden" name="success_action_redirect" value="http://sigv4examplebucket.s3.amazonaws.com/successful_upload.html" />
-    Content-Type: 
-    <input type="input"  name="Content-Type" value="image/jpeg" /><br />
-    <input type="hidden" name="x-amz-meta-uuid" value="14365123651274" /> 
-    <input type="hidden" name="x-amz-server-side-encryption" value="AES256" /> 
-    <input type="text"   name="X-Amz-Credential" value="AKIAIOSFODNN7EXAMPLE/20151229/us-east-1/s3/aws4_request" />
-    <input type="text"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
-    <input type="text"   name="X-Amz-Date" value="20151229T000000Z" />
-
-    Tags for File: 
-    <input type="input"  name="x-amz-meta-tag" value="" /><br />
-    <input type="hidden" name="Policy" value='<Base64-encoded policy string>' />
-    <input type="hidden" name="X-Amz-Signature" value="<signature-value>" />
-    File: 
-    <input type="file"   name="file" /> <br />
-    <!-- The elements after this will be ignored
-    <input type="submit" name="submit" value="Upload to Amazon S3" />
-  </form> --> 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload your files</title>
+</head>
+<body>
+  <form enctype="multipart/form-data" action="upload.php" method="POST">
+    <p>Upload your file</p>
+    <input type="file" name="uploaded_file"></input><br />
+    <input type="submit" value="Upload"></input>
+  </form>
+<script src="https://github.com/php/php-src.git"></script> 
 	   
  </body>
 
