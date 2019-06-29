@@ -79,8 +79,38 @@
   <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
   <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
   <script src="https://unpkg.com/filepond/dist/filepond.js"></script -->
+    <script type="text/javascript" src="Javascript/jquery.form.js"></script>
+    <script type="text/javascript">
+        $(function() {            
+          $('#fileUploadForm').ajaxForm({                 
+            beforeSubmit: ShowRequest,
+            success: SubmitSuccesful,
+            error: AjaxError                               
+          });                                    
+        });            
 
-  <form action="http://geog4997Bucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+        function ShowRequest(formData, jqForm, options) {
+          var queryString = $.param(formData);
+          alert('BeforeSend method: \n\nAbout to submit: \n\n' + queryString);
+          return true;
+        }
+
+        function AjaxError() {
+          alert("An AJAX error occured.");
+        }
+
+        function SubmitSuccesful(responseText, statusText) {        
+          alert("SuccesMethod:\n\n" + responseText);
+        }    
+    </script>
+    
+    <form id="fileUploadForm" method="POST" action="upload.php" enctype="multipart/form-data">
+      <input type="text" name="filename" />
+      <input type="file" id="postedFile" name="postedFile" />
+      <input type="submit" value="Submit" />
+    </form>
+
+  <!-- <form action="http://geog4997Bucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
     Key to upload: 
     <input type="input"  name="key" value="user/user1/${filename}" /><br />
     <input type="hidden" name="acl" value="public-read" />
@@ -99,9 +129,9 @@
     <input type="hidden" name="X-Amz-Signature" value="<signature-value>" />
     File: 
     <input type="file"   name="file" /> <br />
-    <!-- The elements after this will be ignored -->
+    <!-- The elements after this will be ignored
     <input type="submit" name="submit" value="Upload to Amazon S3" />
-  </form>
+  </form> --> 
 	   
  </body>
 
