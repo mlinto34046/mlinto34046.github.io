@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
